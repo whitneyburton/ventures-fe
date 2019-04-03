@@ -22,16 +22,6 @@ describe('actions', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return a type of UPDATE_USER with an array of festivals', () => {
-    const mockUser = { name: 'Jane Doe', story: 'My story text' };
-    const expected = {
-      type: 'UPDATE_USER',
-      user: mockUser
-    };
-    const result = actions.updateUser(mockUser);
-    expect(result).toEqual(expected);
-  });
-
   it('should return a type of SET_WISHLIST with an array of festival ids', () => {
     const mockData = [1, 2, 3];
     const expected = {
@@ -39,6 +29,46 @@ describe('actions', () => {
       wishlist: mockData
     };
     const result = actions.setWishlist(mockData);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return a type of ADD_TO_WISHLIST with a festival id', () => {
+    const mockData = 4;
+    const expected = {
+      type: 'ADD_TO_WISHLIST',
+      eventId: mockData
+    };
+    const result = actions.addToWishlist(mockData);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return a type of REMOVE_FROM_WISHLIST with a festival id', () => {
+    const mockData = 1;
+    const expected = {
+      type: 'REMOVE_FROM_WISHLIST',
+      eventId: mockData
+    };
+    const result = actions.removeFromWishlist(mockData);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return a type of ADD_TO_ATTENDING with a festival id', () => {
+    const mockData = 4;
+    const expected = {
+      type: 'ADD_TO_ATTENDING',
+      eventId: mockData
+    };
+    const result = actions.addToAttending(mockData);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return a type of REMOVE_FROM_ATTENDING with a festival id', () => {
+    const mockData = 1;
+    const expected = {
+      type: 'REMOVE_FROM_ATTENDING',
+      eventId: mockData
+    };
+    const result = actions.removeFromAttending(mockData);
     expect(result).toEqual(expected);
   });
 

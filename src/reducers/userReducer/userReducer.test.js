@@ -12,10 +12,4 @@ describe('userReducer', () => {
     const result = userReducer(undefined, actions.setUser(expected))
     expect(result).toEqual(expected)
   });
-
-  it('should return user object to update', () => {
-    const expected = { name: 'Jane Doe', story: 'This is my story.' };
-    const result = userReducer(undefined, actions.updateUser(expected))
-    expect(result).toEqual(expected)
-  });
 });

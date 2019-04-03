@@ -8,14 +8,29 @@ export const setUser = user => ({
   user
 });
 
-export const updateUser = user => ({
-  type: 'UPDATE_USER',
-  user
-});
-
 export const setWishlist = wishlist => ({
   type: 'SET_WISHLIST',
   wishlist
+});
+
+export const addToWishlist = eventId => ({
+  type: 'ADD_TO_WISHLIST',
+  eventId
+});
+
+export const removeFromWishlist = eventId => ({
+  type: 'REMOVE_FROM_WISHLIST',
+  eventId
+});
+
+export const addToAttending = eventId => ({
+  type: 'ADD_TO_ATTENDING',
+  eventId
+});
+
+export const removeFromAttending = eventId => ({
+  type: 'REMOVE_FROM_ATTENDING',
+  eventId
 });
 
 export const setAttending = attending => ({
