@@ -1,5 +1,5 @@
 export const mockEvents = {
-  "data": [
+  data: [
     {
       id: "1",
       type: "event",
