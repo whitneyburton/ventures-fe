@@ -1,0 +1,31 @@
+.SearchBar {
+  height: 12vh;
+
+  .searchbar-title {
+    margin: 10px;
+  }
+
+  .searchbar-container {
+    display: flex;
+    padding: 7px 20px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+    width: 95%;
+    margin: auto;
+
+    .searchbar-icon {
+      height: 30px;
+    }
+
+    .searchbar-input {
+      width: 90%;
+      margin: auto;
+      border: none;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
