@@ -1,0 +1,18 @@
+.Filters {
+  height: 12vh;
+
+  .filters-title {
+    margin: 10px;
+  }
+
+  select {
+    border: none;
+    margin: 5px;
+    height: 40px;
+    width: 30%;
+  }
+
+  option {
+    padding: 10px;
+  }
+}
