@@ -1,0 +1,1 @@
+import { getEvents } from '../getEvents';
