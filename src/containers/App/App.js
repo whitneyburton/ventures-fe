@@ -7,11 +7,11 @@ import { NavBar } from '../../components/NavBar/NavBar';
 class App extends Component {
   render() {
     return (
-      <div className="App"> 
+      <div className="App">
+        <NavBar />
         <SearchBar />
         <Filters />
         <EventContainer />
-        <NavBar />
       </div>
     );
   }
