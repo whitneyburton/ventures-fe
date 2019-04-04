@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import searchIcon from '../../images/search.svg';
@@ -28,3 +28,5 @@ export class SearchBar extends Component {
     );
   }
 }
+
+export default SearchBar;

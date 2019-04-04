@@ -11,3 +11,5 @@ export class EventContainer extends Component {
   }
 }
 
+export default EventContainer;
+

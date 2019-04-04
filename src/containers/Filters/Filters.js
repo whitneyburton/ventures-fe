@@ -47,3 +47,5 @@ export class Filters extends Component {
     );
   }
 }
+
+export default Filters;
