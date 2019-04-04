@@ -6,11 +6,12 @@ import Profile from '../Profile/Profile'
 import NavBar from '../../components/NavBar/NavBar';
 import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { getEvents } from '../../thunks/getEvents';
 
-export const App = (props) => {
+export const App = ({ getEvents }) => {
 
   useEffect(() => {
-    
+    getEvents();
   })
 
   return (
@@ -28,8 +29,8 @@ export const App = (props) => {
   );
 }
 
-const mapDispatchToProps = ({
-
+const mapDispatchToProps = (dispatch) => ({
+  getEvents: () => dispatch(getEvents())
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

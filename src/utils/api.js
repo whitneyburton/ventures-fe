@@ -17,7 +17,7 @@ export const fetchData = async (path, method, data = null) => {
       };
   };
 
-  const url = process.env.REACT_APP_BACKEND_URL + path;
+  const url = process.env.REACT_APP_BACKEND_URL + '/api/v1' + path;
   const response = await fetch(url, options);
 
   if (response.status === 204) return 'success'
