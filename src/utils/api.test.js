@@ -7,7 +7,7 @@ describe('fetchData', () => {
   let data;
 
   beforeEach(() => {
-    path = '/api/v1/projects';
+    path = '/events';
     method = 'POST';
     data = mockEvents.data[0];
   });
@@ -22,7 +22,7 @@ describe('fetchData', () => {
     }
     window.fetch = jest.fn();
     fetchData(path, method, data);
-    expect(window.fetch).toHaveBeenCalledWith('undefined' + path, mockOptions);
+    expect(window.fetch).toHaveBeenCalledWith('undefined/api/v1' + path, mockOptions);
   });
 
   it('should return a response object if everything is okay', async () => {
