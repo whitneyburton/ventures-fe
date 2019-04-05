@@ -2,7 +2,8 @@ import React, { Fragment, useEffect } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import Filters from '../Filters/Filters';
 import EventContainer from '../EventContainer/EventContainer';
-import Profile from '../Profile/Profile'
+import Profile from '../Profile/Profile';
+import EventPopUp from '../EventPopUp/EventPopUp';
 import NavBar from '../../components/NavBar/NavBar';
 import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -25,12 +26,17 @@ export const App = ({ getEvents }) => {
         </Fragment>
       } />
       <Route path='/profile' component={Profile} />
+      <Route path='/event/:id' render={({ match }) => {
+        const { id } = match.params;
+        return <EventPopUp id={id} />
+      }}
+      />
     </div>
   );
 }
 
 const mapDispatchToProps = (dispatch) => ({
   getEvents: () => dispatch(getEvents())
-})
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

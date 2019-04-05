@@ -10,6 +10,7 @@ export const EventContainer = (props) => {
         props.events.map(event => 
           <EventCard 
             id={event.id}
+            key={event.id}
             name={event.attributes.name}
             image={event.attributes.image_url}
             city={event.attributes.city}
