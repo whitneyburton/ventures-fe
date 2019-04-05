@@ -41,7 +41,7 @@ export const Profile = () => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setUser: user => dispatch(setUser(user))
 });
 

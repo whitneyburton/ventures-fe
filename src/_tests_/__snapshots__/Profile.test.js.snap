@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile should match the snapshot 1`] = `
+<div
+  className="Profile"
+>
+  <div
+    className="user-intro-section"
+  >
+    <img
+      alt="user headshot"
+      className="user-photo"
+      src="https://alumni.turing.io/sites/default/files/styles/graduate_full_profile/public/squareheadshot1.jpg?itok=EGlR-8YR"
+    />
+    <h1
+      className="user-name"
+    >
+      JANE DOE
+    </h1>
+  </div>
+  <div
+    className="user-bio-section"
+  >
+    <p
+      className="user-about-me"
+    >
+      About Me
+    </p>
+    <button
+      className="edit-profile-button"
+      onClick={[Function]}
+    >
+      Edit Profile
+    </button>
+    <p
+      className="user-bio"
+      contentEditable={false}
+    >
+      Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!!
+    </p>
+  </div>
+  <div
+    className="view-tabs-section"
+  >
+    <button
+      className="upcoming-button"
+    >
+      Upcoming
+    </button>
+    <button
+      className="wishlist-button"
+    >
+      Wishlist
+    </button>
+    <button
+      className="past-button"
+    >
+      Past
+    </button>
+  </div>
+  <EventContainer />
+</div>
+`;
