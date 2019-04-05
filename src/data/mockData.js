@@ -135,3 +135,9 @@ export const mockEvents = {
     }
   ]
 };
+
+export const mockUser = {
+  name: 'Jane Doe',
+  image_url: 'https://alumni.turing.io/sites/default/files/styles/graduate_full_profile/public/squareheadshot1.jpg?itok=EGlR-8YR',
+  bio: 'Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!!'
+}
