@@ -1,5 +1,9 @@
 .EventContainer {
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-gap: 10px;
   height: 64vh;
   overflow: scroll;
+  justify-content: center;
+  margin: 30px 0;
 }
