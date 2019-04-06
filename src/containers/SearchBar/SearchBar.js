@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import searchIcon from '../../images/search.svg';
 
-export const SearchBar = (props) => {
+export const SearchBar = () => {
   const [searchQuery, updateSearchQuery] = useState('');
 
   return (
