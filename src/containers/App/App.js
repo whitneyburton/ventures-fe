@@ -26,11 +26,7 @@ export const App = ({ getEvents }) => {
         </Fragment>
       } />
       <Route path='/profile' component={Profile} />
-      <Route path='/event/:id' render={({ match }) => {
-        const { id } = match.params;
-        return <EventPopUp id={id} />
-      }}
-      />
+      <Route path='/event/:id' component={EventPopUp} />
     </div>
   );
 }
