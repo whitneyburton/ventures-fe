@@ -1,5 +1,11 @@
-.EventContainer {
-  border: 1px solid black;
-  height: 64vh;
+.EventContainer-home {
+  background-color: lavender;
+  height: 71vh;
+  overflow: scroll;
+}
+
+.EventContainer-profile {
+  background-color: lavender;
+  height: 48vh;
   overflow: scroll;
 }
