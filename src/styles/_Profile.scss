@@ -1,32 +1,37 @@
 .Profile {
-  height: 94vh;
+  height: 90vh;
 
   .user-intro-section {
     display: flex;
-    justify-content: space-around;
-    padding-top: 40px;
-    align-items: center; 
+    justify-content: space-evenly;
+    padding-top: 15px;
+    align-items: center;
 
-      .user-photo {
-        height: 200px;
-        border-radius: 50%;
-      }
-    
-      .user-name {
-        letter-spacing: 3px;
-      }
+    .user-photo {
+      height: 130px;
+      border-radius: 50%;
+    }
+
+    .user-name {
+      letter-spacing: 3px;
+    }
   }
 
   .user-bio-section {
     .user-about-me {
-      display: inline;
+      margin: 0px auto 5px auto;
+      text-align: left;
+      color: #5c5c5c;
+      width: 70%;
+      font-weight: 500;
     }
+
     .edit-profile-button {
-      margin-left: 50%;
+      margin-left: 58%;
       border-radius: 5px;
       border: none;
       width: 12%;
-      padding: 8px 12px;
+      padding: 4px 0px;
       cursor: pointer;
       color: #f8f8f8;
       background-color: #5c5c5c;
@@ -39,24 +44,26 @@
     .user-bio {
       text-align: justify;
       width: 70%;
-      margin: 10px auto;
+      margin: 0px auto 15px auto;
     }
   }
 
   .view-tabs-section {
-    width: 70%;
+    display: flex;
+    width: 100%;
     margin: auto;
+    background-color: #f8f8f8;
 
-    .upcoming-button, 
+    .upcoming-button,
     .wishlist-button,
     .past-button {
+      text-decoration: none;
       width: 33.33%;
       cursor: pointer;
       border: none;
-      background-color: #f8f8f8;
       color: #5c5c5c;
       letter-spacing: 1px;
-      padding: 15px 0px;
+      padding: 10px 0px;
       font-weight: 500;
 
       &:hover {
@@ -67,6 +74,11 @@
       &:focus {
         outline: none;
       }
+    }
+
+    .active {
+      background-color: #5c5c5c;
+      color: #f8f8f8;
     }
   }
 }
