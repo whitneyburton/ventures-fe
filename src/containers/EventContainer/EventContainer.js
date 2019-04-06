@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import EventCard from '../../components/EventCard/EventCard';
 
 export const EventContainer = (props) => {
+  const { pathname } = props;
+  const styles = pathname.includes('profile') ? 'EventContainer profile' : 'EventContainer home';
     return (
-      <div className='EventContainer'>
+      <div className={styles}>
       {
         props.events.map(event => 
           <EventCard 

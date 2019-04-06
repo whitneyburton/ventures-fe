@@ -18,11 +18,13 @@ export const App = ({ getEvents }) => {
   return (
     <div className="App">
       <NavBar />
-      <Route exact path='/' render={() => 
+      <Route exact path='/' render={(props) => 
         <Fragment>
-          <SearchBar />
-          <Filters />
-          <EventContainer />
+          <div className='search-and-filters'>
+            <SearchBar />
+            <Filters />
+          </div>
+          <EventContainer pathname={props.location.pathname} />
         </Fragment>
       } />
       <Route path='/profile' component={Profile} />

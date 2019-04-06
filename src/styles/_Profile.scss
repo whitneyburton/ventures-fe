@@ -1,0 +1,91 @@
+.Profile {
+  height: 90vh;
+
+  .user-profile {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1% 10% 1% 10%;
+    align-items: center;
+
+    .user-photo {
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    .user-bio-section {
+      padding-left: 35px;
+
+      .bio-header {
+        display: flex;
+        align-items: center;
+
+        .user-name {
+          letter-spacing: 3px;
+        }
+
+        .edit-profile-button {
+          margin-left: 61%;
+          border-radius: 5px;
+          border: none;
+          width: 12%;
+          height: 30px;
+          padding: 4px 0px;
+          cursor: pointer;
+          color: #f8f8f8;
+          background-color: #5c5c5c;
+    
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+  
+      .user-about-me {
+        margin: 0px auto 5px auto;
+        text-align: left;
+        color: #5c5c5c;
+        font-weight: 500;
+      }
+  
+      .user-bio {
+        text-align: justify;
+        margin: 0px auto 15px auto;
+      }
+    }
+  }
+  
+
+  .view-tabs-section {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    background-color: #f8f8f8;
+
+    .upcoming-button,
+    .wishlist-button,
+    .past-button {
+      text-decoration: none;
+      width: 33.33%;
+      cursor: pointer;
+      border: none;
+      color: #5c5c5c;
+      letter-spacing: 1px;
+      padding: 10px 0px;
+      font-weight: 500;
+
+      &:hover {
+        color: #f8f8f8;
+        background-color: #adadad;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .active {
+      background-color: #5c5c5c;
+      color: #f8f8f8;
+    }
+  }
+}
