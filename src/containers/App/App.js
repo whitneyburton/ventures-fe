@@ -5,36 +5,45 @@ import EventContainer from '../EventContainer/EventContainer';
 import Profile from '../Profile/Profile';
 import EventPopUp from '../EventPopUp/EventPopUp';
 import NavBar from '../../components/NavBar/NavBar';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
 
-export const App = ({ getEvents, location }) => {
-
+export const App = ({ getEvents }) => {
   useEffect(() => {
     getEvents();
-  }, [])
+  }, []);
 
   return (
     <div className="App">
       <NavBar />
-      <Route exact path='/' render={(props) => 
-        <Fragment>
-          <div className='search-and-filters'>
-            <SearchBar />
-            <Filters />
-          </div>
-          <EventContainer pathname={props.location.pathname} />
-        </Fragment>
-      } />
-      <Route path='/profile' component={Profile} />
-      <Route path='/event/:id' component={EventPopUp} />
+      <Switch>
+        <Route path="/profile" component={Profile} />
+        <Route
+          path="/"
+          render={props => (
+            <Fragment>
+              <div className="search-and-filters">
+                <SearchBar />
+                <Filters />
+              </div>
+              <EventContainer pathname={props.location.pathname} />
+            </Fragment>
+          )}
+        />
+      </Switch>
+      <Route path="/event/:id" component={EventPopUp} />
     </div>
   );
-}
+};
 
-export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = dispatch => ({
   getEvents: () => dispatch(getEvents())
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(App)
+);
