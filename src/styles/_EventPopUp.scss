@@ -1,105 +1,105 @@
-.event-pop-up {
+.EventPopUp {
   border: 1px solid black;
   width: 500px;
   height: 650px;
   margin: 20px auto;
-}
-
-h2,
-h4,
-.event-link {
-  margin: 10px 20px;
-  text-align: left;
-  font-family: $main-font;
-}
-
-.event-link {
-  display: block;
-  color: black;
-  text-decoration: underline;
-
-  &:hover {
-    color: blue;
+  
+  h2,
+  h4,
+  .event-link {
+    margin: 10px 20px;
+    text-align: left;
+    font-family: $main-font;
   }
-}
-
-h2 {
-  margin-top: 20px;
-  font-size: 30px;
-  text-transform: uppercase;
-}
-
-p {
-  margin: 10px 20px;
-  font-family: $main-font;
-  text-align: justify;
-  height: 90px;
-  overflow: scroll;
-}
-
-img {
-  width: 500px;
-}
-
-.event-type {
-  text-transform: capitalize;
-}
-
-.image-container {
-  width: 498px;
-  height: 300px;
-  overflow: hidden;
-}
-
-.light-text {
-  font-weight: 400;
-}
-
-.button-div {
-  width: 90px;
-  margin: 0 0 0 auto;
-}
-
-.wishlist-button,
-.attending-button,
-.close-pop-up {
-  height: 33px;
-  width: 33px;
-  border: none;
-  cursor: pointer;
-}
-
-.wishlist-button {
-  background: url('../images/add_to_wishlist.svg');
-  background-size: cover;
-
-  &:hover {
-    background: url('../images/remove_from_wishlist.svg');
-    background-size: cover;
+  
+  .event-link {
+    display: block;
+    color: black;
+    text-decoration: underline;
+  
+    &:hover {
+      color: blue;
+    }
   }
-}
-
-.attending-button {
-  background: url('../images/add_to_attending.svg');
-  background-size: cover;
-
-  &:hover {
-    background: url('../images/remove_from_attending.svg');
-    background-size: cover;
+  
+  h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    text-transform: uppercase;
   }
-}
-
-.close-pop-up {
-  display: block;
-  position: relative;
-  top: -635px;
-  right: -460px;
-  background: url('../images/close.svg');
-  background-size: cover;
-  z-index: 12;
-
-  &:hover {
-    background: url('../images/close_hover.svg');
+  
+  p {
+    margin: 10px 20px;
+    font-family: $main-font;
+    text-align: justify;
+    height: 90px;
+    overflow: scroll;
+  }
+  
+  img {
+    width: 500px;
+  }
+  
+  .event-type {
+    text-transform: capitalize;
+  }
+  
+  .image-container {
+    width: 498px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .light-text {
+    font-weight: 400;
+  }
+  
+  .button-div {
+    width: 90px;
+    margin: 0 0 0 auto;
+  }
+  
+  .wishlist-button,
+  .attending-button,
+  .close-pop-up {
+    height: 33px;
+    width: 33px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .wishlist-button {
+    background: url('../images/add_to_wishlist.svg');
     background-size: cover;
+  
+    &:hover {
+      background: url('../images/remove_from_wishlist.svg');
+      background-size: cover;
+    }
+  }
+  
+  .attending-button {
+    background: url('../images/add_to_attending.svg');
+    background-size: cover;
+  
+    &:hover {
+      background: url('../images/remove_from_attending.svg');
+      background-size: cover;
+    }
+  }
+  
+  .close-pop-up {
+    display: block;
+    position: relative;
+    top: -635px;
+    right: -460px;
+    background: url('../images/close.svg');
+    background-size: cover;
+    z-index: 12;
+  
+    &:hover {
+      background: url('../images/close_hover.svg');
+      background-size: cover;
+    }
   }
 }

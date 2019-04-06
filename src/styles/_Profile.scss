@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     padding: 1% 10% 1% 10%;
     align-items: center;
+    height: 30vh;
 
     .user-photo {
       height: 200px;
@@ -18,13 +19,13 @@
       .bio-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
         .user-name {
           letter-spacing: 3px;
         }
 
         .edit-profile-button {
-          margin-left: 61%;
           border-radius: 5px;
           border: none;
           width: 12%;
@@ -60,6 +61,7 @@
     width: 100%;
     margin: auto;
     background-color: #f8f8f8;
+    height: 5vh;
 
     .upcoming-button,
     .wishlist-button,

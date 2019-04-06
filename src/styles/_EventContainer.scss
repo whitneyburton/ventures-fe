@@ -1,16 +1,16 @@
-.home {
-  height: 71vh;
-}
-
-.profile {
-  height: 55vh;
-}
-
 .EventContainer {
   overflow: scroll;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
   grid-gap: 10px;
   justify-content: center;
-  margin: 30px 0;
+}
+
+.home {
+  height: 75vh;
+}
+
+.profile {
+  padding-top: 10px;
+  height: 55vh;
 }

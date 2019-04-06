@@ -17,7 +17,7 @@ export const EventPopUp = (props) => {
   if (event.attributes) {
     const { name, city, state, event_type, price, start_date, end_date, description, event_url, image_url, video_url } = event.attributes;
     return (
-      <div className='event-pop-up'>
+      <div className='EventPopUp'>
         <div className='image-container'>
           <img src={image_url} alt='event photo' />
         </div>
