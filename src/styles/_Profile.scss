@@ -1,52 +1,59 @@
 .Profile {
   height: 90vh;
 
-  .user-intro-section {
+  .user-profile {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 15px;
+    padding: 1% 10% 1% 10%;
     align-items: center;
 
     .user-photo {
-      height: 130px;
+      height: 200px;
       border-radius: 50%;
     }
 
-    .user-name {
-      letter-spacing: 3px;
-    }
-  }
+    .user-bio-section {
+      padding-left: 35px;
 
-  .user-bio-section {
-    .user-about-me {
-      margin: 0px auto 5px auto;
-      text-align: left;
-      color: #5c5c5c;
-      width: 70%;
-      font-weight: 500;
-    }
+      .bio-header {
+        display: flex;
+        align-items: center;
 
-    .edit-profile-button {
-      margin-left: 58%;
-      border-radius: 5px;
-      border: none;
-      width: 12%;
-      padding: 4px 0px;
-      cursor: pointer;
-      color: #f8f8f8;
-      background-color: #5c5c5c;
+        .user-name {
+          letter-spacing: 3px;
+        }
 
-      &:focus {
-        outline: none;
+        .edit-profile-button {
+          margin-left: 61%;
+          border-radius: 5px;
+          border: none;
+          width: 12%;
+          height: 30px;
+          padding: 4px 0px;
+          cursor: pointer;
+          color: #f8f8f8;
+          background-color: #5c5c5c;
+    
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+  
+      .user-about-me {
+        margin: 0px auto 5px auto;
+        text-align: left;
+        color: #5c5c5c;
+        font-weight: 500;
+      }
+  
+      .user-bio {
+        text-align: justify;
+        margin: 0px auto 15px auto;
       }
     }
-
-    .user-bio {
-      text-align: justify;
-      width: 70%;
-      margin: 0px auto 15px auto;
-    }
   }
+  
 
   .view-tabs-section {
     display: flex;
@@ -68,7 +75,7 @@
 
       &:hover {
         color: #f8f8f8;
-        background-color: #5c5c5c;
+        background-color: #adadad;
       }
 
       &:focus {

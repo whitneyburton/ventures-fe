@@ -12,25 +12,27 @@ export const Profile = (props) => {
 
   return (
     <div className="Profile">
-      <div className="user-intro-section">
+      <div className='user-profile'>
         <img
           src={mockUser.image_url}
           alt="user headshot"
           className="user-photo"
         />
-        <h1 className="user-name" contentEditable={contentEditable}>{mockUser.name.toUpperCase()}</h1>
-      </div>
-      <div className="user-bio-section">
-        <button
-          onClick={() => toggleEditable(!contentEditable)}
-          className="edit-profile-button"
-        >
-          {buttonText}
-        </button>
-        <p className="user-about-me">ABOUT ME</p>
-        <p className="user-bio" contentEditable={contentEditable}>
-          {mockUser.bio}
-        </p>
+        <div className="user-bio-section">
+          <div className='bio-header'>
+            <h1 className="user-name" contentEditable={contentEditable}>{mockUser.name.toUpperCase()}</h1>
+            <button
+              onClick={() => toggleEditable(!contentEditable)}
+              className="edit-profile-button"
+            >
+            {buttonText}
+          </button>
+          </div>
+          <p className="user-about-me">ABOUT ME</p>
+          <p className="user-bio" contentEditable={contentEditable}>
+            {mockUser.bio}
+          </p>
+        </div>
       </div>
       <div className="view-tabs-section">
         <NavLink
