@@ -9,11 +9,11 @@ import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
 
-export const App = ({ getEvents }) => {
+export const App = ({ getEvents, location }) => {
 
   useEffect(() => {
     getEvents();
-  })
+  }, [])
 
   return (
     <div className="App">
@@ -33,7 +33,7 @@ export const App = ({ getEvents }) => {
   );
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   getEvents: () => dispatch(getEvents())
 });
 
