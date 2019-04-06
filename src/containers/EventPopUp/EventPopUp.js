@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { mockEvents } from '../../data/mockData';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getEvent } from '../../thunks/getEvent';
 
-export const EventPopUp = (props) => {
-  const [event, setEvent] =  useState({});
-
-  const getEvent = () => {
-    // call individual id thunk
-    setEvent(mockEvents.data[0]);
-  }
+export const EventPopUp = ({ getEvent, match }) => {
+  const [event, updateEvent] =  useState({});
 
   useEffect(() => {
-    getEvent()
-  })
+    const fetchEvent = async () => {
+      updateEvent(await getEvent(match.params.id))
+    }
+    fetchEvent();
+  }, []);
 
-  if (event.attributes) {
-    const { name, city, state, event_type, price, start_date, end_date, description, event_url, image_url, video_url } = event.attributes;
+  if (event.name) {
+    const { name, city, state, event_type, price, start_date, end_date, description, event_url, image_url, video_url } = event;
     return (
       <div className='EventPopUp'>
         <div className='image-container'>
@@ -24,7 +23,7 @@ export const EventPopUp = (props) => {
         <h2>{name}</h2>
         <h4>{city}, {state}</h4>
         <h4>Dates: <span className='light-text'>
-          {start_date === end_date ? {start_date} : `${start_date} to ${end_date}`}
+          {start_date === end_date ? `${start_date}` : `${start_date} to ${end_date}`}
         </span></h4>
         <h4 className='event-type'>Event Type: <span className='light-text'>{event_type}</span></h4>
         <h4>Price: <span className='light-text'>${price}</span></h4>
@@ -40,7 +39,10 @@ export const EventPopUp = (props) => {
   } else {
     return(<div>Loading...</div>)
   }
-  
 }
 
-export default EventPopUp;
+export const mapDispatchToProps = (dispatch) => ({
+  getEvent: (id) => dispatch(getEvent(id)),
+});
+
+export default connect(null, mapDispatchToProps)(EventPopUp);
