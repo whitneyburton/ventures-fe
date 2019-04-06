@@ -1,0 +1,41 @@
+.event-card {
+  width: 400px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-container {
+  width: 400px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3,
+h5 {
+  margin: 0;
+  text-align: left;
+  font-family: $main-font;
+  text-decoration: none;
+  color: white;
+}
+
+.card-name {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.card-location,
+.card-date {
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 8px;
+}

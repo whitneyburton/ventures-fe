@@ -1,15 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import EventCard from '../../components/EventCard/EventCard';
 
 export const EventContainer = (props) => {
   const { pathname } = props;
-  const styles = pathname.includes('profile') ? 'EventContainer-profile' : 'EventContainer-home';
+  const styles = pathname.includes('profile') ? 'EventContainer profile' : 'EventContainer home';
     return (
-      <div className={styles} >
+      <div className={styles}>
+      {
+        props.events.map(event => 
+          <EventCard 
+            id={event.id}
+            key={event.id}
+            name={event.attributes.name}
+            image={event.attributes.image_url}
+            city={event.attributes.city}
+            state={event.attributes.state}
+            date={event.attributes.start_date}
+          />
+        )
+      }
       </div>
     )
 }
 
-export default EventContainer;
+export const mapStateToProps = (state) => ({
+  events: state.events,
+})
+
+export default connect(mapStateToProps)(EventContainer);
 
