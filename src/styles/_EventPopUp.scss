@@ -1,3 +1,13 @@
+.overlay {
+  left: 0;
+  margin-top: 10vh;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
 .EventPopUp {
   border: 1px solid black;
   width: 500px;
@@ -43,7 +53,7 @@
   }
   
   img {
-    width: 500px;
+    width: 100%;
   }
   
   .event-type {
@@ -51,6 +61,7 @@
   }
   
   .image-container {
+    margin: 0 auto;
     width: 498px;
     height: 300px;
     overflow: hidden;
