@@ -1,12 +1,12 @@
-import { setLoading, setError } from '../actions';
+import { setLoading, setError, setUser } from '../actions';
 import { fetchData } from '../utils/api';
 
-export const getEvent = (eventId = '') => {
+export const getUser = (userId = '') => { 
   return async (dispatch) => {
     try {
       dispatch(setLoading(true));
-      const event = await fetchData(`/events/${eventId}`, 'GET');
-      return event.data.attributes;
+      const user = await fetchData(`/users/${userId}`, 'GET');
+      dispatch(setUser(user.data.attributes));
     } catch (error) {
       dispatch(setError(error.message));
     }
