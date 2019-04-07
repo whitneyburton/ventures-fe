@@ -9,20 +9,38 @@
 
 .EventPopUp {
   border: 1px solid black;
-  width: 500px;
-  height: 650px;
+  width: 900px;
+  height: 405px;
   margin: 20px auto;
   position: fixed;
+  display: flex;
   background-color: #fff;
-  margin-left: -220px;
-  margin-top: -300px;
+  margin-left: -450px;
+  margin-top: -30vh;
   left: 50%;
   top: 50%;
+
+  .display-panel {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .image-container {
+    width: 500px;
+    height: 403px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .text-container {
+    width: 400px;
+  }
   
   h2,
   h4,
   .event-link {
-    margin: 10px 20px;
+    margin: 0 20px 10px 20px;
     text-align: left;
     font-family: $main-font;
   }
@@ -38,7 +56,6 @@
   }
   
   h2 {
-    margin-top: 20px;
     font-size: 30px;
     text-transform: uppercase;
   }
@@ -53,17 +70,12 @@
   
   img {
     width: 100%;
+    min-height: 300px;
+    overflow: hidden;
   }
   
   .event-type {
     text-transform: capitalize;
-  }
-  
-  .image-container {
-    margin: 0 auto;
-    width: 498px;
-    height: 300px;
-    overflow: hidden;
   }
   
   .light-text {
@@ -77,7 +89,8 @@
   
   .wishlist-button,
   .attending-button,
-  .close-pop-up {
+  .close-pop-up,
+  .arrow {
     height: 33px;
     width: 33px;
     border: none;
@@ -106,9 +119,7 @@
   
   .close-pop-up {
     display: block;
-    position: relative;
-    top: -635px;
-    right: -460px;
+    margin: 10px 10px 0 auto;
     background: url('../images/close.svg');
     background-size: cover;
     z-index: 12;
@@ -116,6 +127,82 @@
     &:hover {
       background: url('../images/close_hover.svg');
       background-size: cover;
+    }
+  }
+
+  .arrow {
+    position: relative;
+    z-index: 12;
+  }
+
+  .forward {
+    top: -210px;
+    right: -230px;
+    background: url('../images/arrow_forward.svg');
+    background-size: cover;
+  
+    &:hover {
+      background: url('../images/arrow_forward_hover.svg');
+      background-size: cover;
+    }
+  }
+
+  .back {
+    top: -210px;
+    right: 225px;
+    background: url('../images/arrow_back.svg');
+    background-size: cover;
+  
+    &:hover {
+      background: url('../images/arrow_back_hover.svg');
+      background-size: cover;
+    }
+  }
+
+  
+}
+
+@media screen and (max-width: 920px) {  
+  .EventPopUp {
+    width: 400px;
+    height: 600px;
+    margin-top: -40vh;
+    margin-left: -200px;
+    flex-direction: column;
+
+    h4, 
+    p,
+    a {
+      font-size: 14px;
+    }
+
+    .close-pop-up {
+      width: 25px;
+      height: 25px;
+    }
+
+    .display-panel {
+      width: 398px;
+      height: 250px;
+    }
+
+    .image-container {
+      width: 398px;
+      height: 250px;
+    }
+  
+    .text-container {
+      width: 400px;
+    }
+
+    .forward {
+      top: -140px;
+      right: -180px;
+    }
+
+    .back {
+      top: -140px;
+      right: 175px;
     }
   }
 }
