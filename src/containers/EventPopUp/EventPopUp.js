@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvent } from '../../thunks/getEvent';
 
-export const EventPopUp = ({ getEvent, match }) => {
+export const EventPopUp = ({ getEvent, match, history }) => {
   const [event, updateEvent] =  useState({});
-
   useEffect(() => {
     const fetchEvent = async () => {
       updateEvent(await getEvent(match.params.id))
@@ -33,7 +32,7 @@ export const EventPopUp = ({ getEvent, match }) => {
           <button className='wishlist-button'></button>
           <button className='attending-button'></button>
         </div>
-        <Link to='/' className='close-pop-up'></Link>
+        <button onClick={() => history.goBack()} className='close-pop-up'></button>
       </div>
     )
   } else {
