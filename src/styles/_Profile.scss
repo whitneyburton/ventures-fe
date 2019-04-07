@@ -28,7 +28,7 @@
         .edit-profile-button {
           border-radius: 5px;
           border: none;
-          width: 12%;
+          width: 100px;
           height: 30px;
           padding: 4px 0px;
           cursor: pointer;
@@ -49,8 +49,10 @@
       }
   
       .user-bio {
+        height: 72px;
         text-align: justify;
         margin: 0px auto 15px auto;
+        overflow: scroll;
       }
     }
   }
@@ -88,6 +90,14 @@
     .active {
       background-color: #5c5c5c;
       color: #f8f8f8;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {  
+  .Profile {
+    .user-profile {
+      padding: 1% 2%;
     }
   }
 }

@@ -58,3 +58,31 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 1005px) { 
+  .NavBar {
+    .ventures-slogan {
+      width: 30%;
+      margin-right: 30%;
+    }
+  } 
+}
+
+@media screen and (max-width: 715px) { 
+  .NavBar {
+    .ventures-slogan {
+      width: 40%;
+      margin-right: 10%;
+    }
+  } 
+}
+
+@media screen and (max-width: 550px) { 
+  .NavBar {
+    order: 2;
+
+    .ventures-slogan {
+      display: none;
+    }
+  } 
+}

@@ -158,4 +158,52 @@
       background-size: cover;
     }
   }
+
+  
+}
+
+@media screen and (max-width: 920px) {  
+  .EventPopUp {
+    width: 400px;
+    height: 600px;
+    margin-top: -40vh;
+    margin-left: -200px;
+    flex-direction: column;
+
+    h4, 
+    p,
+    a {
+      font-size: 14px;
+    }
+
+    .close-pop-up {
+      width: 25px;
+      height: 25px;
+    }
+
+    .display-panel {
+      width: 398px;
+      height: 250px;
+    }
+
+    .image-container {
+      width: 398px;
+      height: 250px;
+    }
+  
+    .text-container {
+      width: 400px;
+    }
+
+    .forward {
+      top: -140px;
+      right: -180px;
+    }
+
+    .back {
+      top: -140px;
+      right: 175px;
+    }
+  }
+
 }
