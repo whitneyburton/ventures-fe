@@ -17,6 +17,7 @@ export const EventContainer = ({ pathname, events }) => {
             city={event.attributes.city}
             state={event.attributes.state}
             date={event.attributes.start_date}
+            pathname={pathname}
           />
         )
       }

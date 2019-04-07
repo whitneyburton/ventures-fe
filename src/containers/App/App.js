@@ -9,7 +9,7 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
 
-export const App = ({ getEvents }) => {
+export const App = ({ getEvents, location }) => {
   useEffect(() => {
     getEvents();
   }, []);
@@ -32,7 +32,12 @@ export const App = ({ getEvents }) => {
           )}
         />
       </Switch>
-      <Route path="/event/:id" component={EventPopUp} />
+      <Switch>
+        <Route path='/event/:id' component={EventPopUp} />
+        <Route path='/profile/upcoming/event/:id' component={EventPopUp} />
+        <Route path='/profile/wishlist/event/:id' component={EventPopUp} />
+        <Route path='/profile/past/event/:id' component={EventPopUp} />
+      </Switch>
     </div>
   );
 };
