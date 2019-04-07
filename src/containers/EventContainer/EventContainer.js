@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import EventCard from '../../components/EventCard/EventCard';
 
-export const EventContainer = (props) => {
-  const { pathname } = props;
+export const EventContainer = ({ pathname, events }) => {
   const styles = pathname.includes('profile') ? 'EventContainer profile' : 'EventContainer home';
     return (
       <div className={styles}>
       {
-        props.events.map(event => 
+        events.map(event => 
           <EventCard 
             id={event.id}
             key={event.id}
