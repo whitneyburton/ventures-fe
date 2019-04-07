@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
 import { getUser } from '../../thunks/getUser';
 
-export const App = ({ getEvents, getUser, location, isLoading, error }) => {
+export const App = ({ getEvents, getUser, location }) => {
   useEffect(() => {
     getUser('1');
     getEvents();
@@ -18,31 +18,26 @@ export const App = ({ getEvents, getUser, location, isLoading, error }) => {
 
   return (
     <div className="App">
-      {isLoading && <h1>Loading...</h1>}
-      {!isLoading && (
-        <Fragment>
-          <NavBar />
-          <Switch>
-            <Route path="/profile" component={Profile} />
-            <Route
-              path="/"
-              render={() => (
-                <Fragment>
-                  <div className="search-and-filters">
-                    <SearchBar />
-                    <Filters />
-                  </div>
-                  <EventContainer pathname={location.pathname} />
-                </Fragment>
-              )}
-            />
-          </Switch>
-          <Switch>
-            <Route path="/event/:id" component={EventPopUp} />
-            <Route path="/profile/event/:id" component={EventPopUp} />
-          </Switch>
-        </Fragment>
-      )}
+      <NavBar />
+      <Switch>
+        <Route path="/profile" component={Profile} />
+        <Route
+          path="/"
+          render={() => (
+            <Fragment>
+              <div className="search-and-filters">
+                <SearchBar />
+                <Filters />
+              </div>
+              <EventContainer pathname={location.pathname} />
+            </Fragment>
+          )}
+        />
+      </Switch>
+      <Switch>
+        <Route path="/event/:id" component={EventPopUp} />
+        <Route path="/profile/event/:id" component={EventPopUp} />
+      </Switch>
     </div>
   );
 };
