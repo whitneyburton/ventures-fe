@@ -16,7 +16,7 @@ export const Filters = ({ events }) => {
     }, []);
     return uniqueFilters.map(item => {
       const formattedItem = filter === 'event_type' ? formatType(item) : item;
-      return (<option value={`${item}`}>{formattedItem}</option>)
+      return (<option key={item} value={item}>{formattedItem}</option>)
     })
   }
 
@@ -27,7 +27,7 @@ export const Filters = ({ events }) => {
         const eventMonth = event.attributes.start_date.split('-')[0];
         return parseInt(eventMonth) === index + 1
       })
-    return (<option value={`${month}`}>{month} ({matchingEvents.length})</option>)
+      return (<option key={month} value={month}>{month} ({matchingEvents.length})</option>)
     })
   }
 
@@ -46,7 +46,7 @@ export const Filters = ({ events }) => {
           value={eventType}
           onChange={(e) => updateType(e.target.value)}
         >
-          <option value="">Event Type</option>
+          <option key='Type' value=''>Event Type</option>
           {setFilters('event_type')}
         </select>
         <select
@@ -54,7 +54,7 @@ export const Filters = ({ events }) => {
           value={month}
           onChange={(e) => updateMonth(e.target.value)}
         >
-          <option value="Month">Month</option>
+          <option key='Month' value=''>Month</option>
           {setMonthFilter()}
         </select>
         <select
@@ -62,7 +62,7 @@ export const Filters = ({ events }) => {
           value={state}
           onChange={(e) => updateState(e.target.value)}
         >
-          <option value="State">State</option>
+          <option key='State'value=''>State</option>
           {setFilters('state')}
         </select>
       </div>
