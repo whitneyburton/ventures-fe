@@ -2,9 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { EventPopUp, mapDispatchToProps } from '../containers/EventPopUp/EventPopUp';
 import { getEvent } from '../thunks/getEvent';
+jest.mock('../thunks/getEvent');
 
 const mockProps = {
-  getEvent: jest.fn()
+  getEvent,
+  match: { params: { id: '1' } },
+  history: { goBack: jest.fn() }
 }
 
 describe('EventPopUp', () => {
@@ -19,7 +22,7 @@ describe('EventPopUp', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it.skip('should call dispatch with the getEvent thunk', async () => {
+    it('should call dispatch with the getEvent thunk', async () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = getEvent('1');
       const mappedProps = mapDispatchToProps(mockDispatch);
