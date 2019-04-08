@@ -19,65 +19,65 @@ export const Profile = ({ location, user, updateUser }) => {
     };
 
     return (
-      <div className="Profile">
-        <div className="user-profile">
+      <div className='Profile'>
+        <div className='user-profile'>
           <img
             src={user.image_url}
-            alt="user headshot"
-            className="user-photo"
+            alt='user headshot'
+            className='user-photo'
           />
-          <div className="user-bio-section">
-            <div className="bio-header">
+          <div className='user-bio-section'>
+            <div className='bio-header'>
               {!contentEditable ? (
-                <h1 className="user-name">{name.toUpperCase()}</h1>
+                <h1 className='user-name'>{name.toUpperCase()}</h1>
               ) : (
                 <input
-                  className="edit-name-input"
+                  className='edit-name-input'
                   value={name.toUpperCase()}
                   onChange={e => editName(e.target.value)}
                 />
               )}
               <button
                 onClick={() => saveUser()}
-                className="edit-profile-button"
+                className='edit-profile-button'
               >
                 {buttonText}
               </button>
             </div>
-            <p className="user-about-me">ABOUT ME</p>
+            <p className='user-about-me'>ABOUT ME</p>
             {!contentEditable ? (
-              <p className="user-bio">{bio}</p>
+              <p className='user-bio'>{bio}</p>
             ) : (
               <input
-                className="edit-bio-input"
+                className='edit-bio-input'
                 value={bio}
                 onChange={e => editBio(e.target.value)}
               />
             )}
           </div>
         </div>
-        <div className="view-tabs-section">
+        <div className='view-tabs-section'>
           <NavLink
             exact
-            to="/profile/upcoming"
-            className="upcoming-button"
-            activeClassName="active"
+            to='/profile/upcoming'
+            className='upcoming-button'
+            activeClassName='active'
           >
             Upcoming
           </NavLink>
           <NavLink
             exact
-            to="/profile/wishlist"
-            className="wishlist-button"
-            activeClassName="active"
+            to='/profile/wishlist'
+            className='wishlist-button'
+            activeClassName='active'
           >
             Wishlist
           </NavLink>
           <NavLink
             exact
-            to="/profile/past"
-            className="past-button"
-            activeClassName="active"
+            to='/profile/past'
+            className='past-button'
+            activeClassName='active'
           >
             Past
           </NavLink>

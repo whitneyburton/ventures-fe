@@ -1,3 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Profile should match the snapshot 1`] = `undefined`;
+exports[`Profile should match the snapshot 1`] = `
+<div
+  className="Profile"
+>
+  <div
+    className="user-profile"
+  >
+    <img
+      alt="user headshot"
+      className="user-photo"
+      src="https://alumni.turing.io/sites/default/files/styles/graduate_full_profile/public/squareheadshot1.jpg?itok=EGlR-8YR"
+    />
+    <div
+      className="user-bio-section"
+    >
+      <div
+        className="bio-header"
+      >
+        <h1
+          className="user-name"
+        >
+          JANE DOE
+        </h1>
+        <button
+          className="edit-profile-button"
+          onClick={[Function]}
+        >
+          Edit Profile
+        </button>
+      </div>
+      <p
+        className="user-about-me"
+      >
+        ABOUT ME
+      </p>
+      <p
+        className="user-bio"
+      >
+        Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!! Hi I’m Jane and I have no friends because this app only has one user, and it’s me!!!
+      </p>
+    </div>
+  </div>
+  <div
+    className="view-tabs-section"
+  >
+    <NavLink
+      activeClassName="active"
+      className="upcoming-button"
+      exact={true}
+      to="/profile/upcoming"
+    >
+      Upcoming
+    </NavLink>
+    <NavLink
+      activeClassName="active"
+      className="wishlist-button"
+      exact={true}
+      to="/profile/wishlist"
+    >
+      Wishlist
+    </NavLink>
+    <NavLink
+      activeClassName="active"
+      className="past-button"
+      exact={true}
+      to="/profile/past"
+    >
+      Past
+    </NavLink>
+  </div>
+  <Connect(EventContainer)
+    pathname="/profile"
+  />
+</div>
+`;
