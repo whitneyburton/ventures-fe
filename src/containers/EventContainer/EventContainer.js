@@ -27,7 +27,10 @@ export const EventContainer = ({ pathname, events }) => {
 
 export const mapStateToProps = (state) => ({
   events: state.events,
-})
+});
 
 export default connect(mapStateToProps)(EventContainer);
 
+EventContainer.propTypes = {
+  events: PropTypes.array
+}

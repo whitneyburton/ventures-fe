@@ -37,6 +37,14 @@ describe('getEvents', () => {
     expect(mockDispatch).toHaveBeenCalledWith(setEvents(expected.data))
   });
 
+  it('should call dispatch with the setLoading action', async () => {
+    const expected = mockEvents;
+    fetchData.mockReturnValue(expected);
+    const thunk = getEvents();
+    await thunk(mockDispatch);
+    expect(mockDispatch).toHaveBeenCalledWith(setLoading(false));
+  });
+
   it('should dispatch setError if there is an error', async () => {
     fetchData.mockImplementation(() => {
       throw { message: 'Error fetching data.'}
@@ -44,5 +52,5 @@ describe('getEvents', () => {
     const thunk = getEvents();
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(setError('Error fetching data.'))
-  })
+  });
 });

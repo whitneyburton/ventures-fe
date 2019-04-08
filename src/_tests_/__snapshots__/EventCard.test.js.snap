@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventCard should match the snapshot 1`] = `
+<Link
+  to="/event/1"
+>
+  <div
+    className="EventCard"
+    style={
+      Object {
+        "backgroundImage": "url(https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg)",
+      }
+    }
+  >
+    <div
+      className="text-container"
+    >
+      <h3
+        className="card-name"
+      >
+        Shelf Road Craggin' Classic
+      </h3>
+      <h5
+        className="card-location"
+      >
+        Canon Springs
+        , 
+        CO
+      </h5>
+      <h5
+        className="card-date"
+      >
+        10-19-2018
+      </h5>
+    </div>
+  </div>
+</Link>
+`;

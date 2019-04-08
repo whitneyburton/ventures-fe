@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
 
 export const EventPopUp = ({ getEvent, match, history }) => {
@@ -8,7 +9,8 @@ export const EventPopUp = ({ getEvent, match, history }) => {
 
   useEffect(() => {
     const fetchEvent = async () => {
-      updateEvent(await getEvent(match.params.id))
+      const event = await getEvent(match.params.id);
+      updateEvent(event)
     }
     fetchEvent();
   }, []);
@@ -16,7 +18,7 @@ export const EventPopUp = ({ getEvent, match, history }) => {
   const displayToShow = () => {
     const { image_url, video_url } = event;
     if (showVideo) {
-      return (<iframe className='image-container' src={video_url}></iframe>)
+      return (<iframe title='Event Video' className='image-container' src={video_url}></iframe>)
     } else {
       return (<div className='image-container' style={{ backgroundImage: `url(${image_url})` }}></div>)
     }
@@ -60,3 +62,9 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(EventPopUp);
+
+EventPopUp.propTypes = {
+  getEvent: PropTypes.func,
+  match: PropTypes.object,
+  history: PropTypes.object
+}
