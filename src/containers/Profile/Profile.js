@@ -28,11 +28,14 @@ export const Profile = ({ location, user, updateUser }) => {
           />
           <div className="user-bio-section">
             <div className="bio-header">
-              {!contentEditable && (
+              {!contentEditable ? (
                 <h1 className="user-name">{name.toUpperCase()}</h1>
-              )}
-              {contentEditable && (
-                <input className='edit-name-input' value={name.toUpperCase()} onChange={e => editName(e.target.value)} />
+              ) : (
+                <input
+                  className="edit-name-input"
+                  value={name.toUpperCase()}
+                  onChange={e => editName(e.target.value)}
+                />
               )}
               <button
                 onClick={() => saveUser()}
@@ -42,9 +45,14 @@ export const Profile = ({ location, user, updateUser }) => {
               </button>
             </div>
             <p className="user-about-me">ABOUT ME</p>
-            {!contentEditable && <p className="user-bio">{bio}</p>}
-            {contentEditable && (
-              <input className='edit-bio-input' value={bio} onChange={e => editBio(e.target.value)} />
+            {!contentEditable ? (
+              <p className="user-bio">{bio}</p>
+            ) : (
+              <input
+                className="edit-bio-input"
+                value={bio}
+                onChange={e => editBio(e.target.value)}
+              />
             )}
           </div>
         </div>
