@@ -24,9 +24,9 @@ describe('getEvents', () => {
   });
 
   it('should call fetchData with the correct parameters with a limit', async () => {
-    const thunk = getEvents('10', 'biking', 'CO', 'July');
+    const thunk = getEvents('biking', 'CO', 7);
     await thunk(mockDispatch);
-    expect(fetchData).toHaveBeenCalledWith('/events?&limit=10&event-type=biking&state=CO&month=July', 'GET');
+    expect(fetchData).toHaveBeenCalledWith('/events?&event_type=biking&state=CO&month=7', 'GET');
   });
 
   it('should dispatch setEvents with the events', async () => {
