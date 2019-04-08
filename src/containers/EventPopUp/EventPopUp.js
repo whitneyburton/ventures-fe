@@ -37,7 +37,7 @@ export const EventPopUp = ({ getEvent, match, history }) => {
             <button onClick={() => history.goBack()} className='close-pop-up'></button>
             <h2>{name}</h2>
             <h4>{city}, {state}</h4>
-            <h4>Dates: <span className='light-text'>
+            <h4>Date(s): <span className='light-text'>
               {start_date === end_date ? `${start_date}` : `${start_date} to ${end_date}`}
             </span></h4>
             <h4 className='event-type'>Event Type: <span className='light-text'>{event_type}</span></h4>
