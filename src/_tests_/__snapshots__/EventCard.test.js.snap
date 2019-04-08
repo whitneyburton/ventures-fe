@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventCard should match the snapshot 1`] = `undefined`;
+
+exports[`EventCard should match the snapshot for the /profile path 1`] = `undefined`;
