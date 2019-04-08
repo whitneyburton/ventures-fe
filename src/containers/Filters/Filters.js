@@ -77,3 +77,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(Filters);
+
+Filters.propTypes = {
+  events: PropTypes.array
+}
