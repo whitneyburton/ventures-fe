@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventCard = ({ id, name, image, city, state, date, pathname }) => {
-  return(
+  return (
     <Link to={pathname === '/' ? `/event/${id}` : `/profile/event/${id}`}>
       <div className='EventCard' style={{ backgroundImage: `url(${image})`}}>
         <div className='text-container'>
