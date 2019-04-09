@@ -3,56 +3,64 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import EventCard from '../../components/EventCard/EventCard';
 
-export const EventContainer = ({ pathname, events, userEvents }) => {
-  const allEvents = events.map(event => (
-    <EventCard
-      id={event.id}
-      key={event.id}
-      name={event.attributes.name}
-      image={event.attributes.image_url}
-      city={event.attributes.city}
-      state={event.attributes.state}
-      date={event.attributes.start_date}
-      pathname={pathname}
-    />
-  ));
-
-  const tabOptions = ['attending', 'wishlist', 'past'];
-  const tabEvents = tabOptions.map(option => {
-    return userEvents
-      .filter(event => event.attributes.status === `${option}`)
-      .map(event => {
-        return (
-          <EventCard
-            id={event.id}
-            key={event.id}
-            name={event.attributes.name}
-            image={event.attributes.image_url}
-            city={event.attributes.city}
-            state={event.attributes.state}
-            date={event.attributes.start_date}
-            pathname={pathname}
-          />
-        );
-      });
-  });
-
+export const EventContainer = ({
+  pathname,
+  events,
+  searchText,
+  userEvents
+}) => {
+  
   const styles = pathname.includes('profile')
     ? 'EventContainer profile'
     : 'EventContainer home';
 
+  const filterEvents = () => {
+    return events.filter(event => {
+      const { name, city, state } = event.attributes;
+      const text = name + ' ' + city + ' ' + state;
+      return text.toUpperCase().includes(searchText.toUpperCase());
+    });
+  };
+
+  const filterUserEvents = status => {
+    return userEvents.filter(event => event.attributes.status === status);
+  };
+
+  let shownEvents;
+
   if (pathname.includes('upcoming')) {
-    return <div className={styles}>{tabEvents[0]}</div>;
+    shownEvents = filterUserEvents('attending');
   } else if (pathname.includes('wishlist')) {
-    return <div className={styles}>{tabEvents[1]}</div>;
+    shownEvents = filterUserEvents('wishlist');
   } else if (pathname.includes('past')) {
-    return <div className={styles}>{tabEvents[2]}</div>;
+    shownEvents = filterUserEvents('past');
   } else {
-    return <div className={styles}>{allEvents}</div>;
+    shownEvents = searchText.length ? filterEvents() : events;
   }
+
+  return (
+    <div className={styles}>
+      {shownEvents.map(event => {
+        const { name, image_url, city, state, start_date } = event.attributes;
+        return (
+          <EventCard
+            id={event.id}
+            key={event.id}
+            name={name}
+            image={image_url}
+            city={city}
+            state={state}
+            date={start_date}
+            pathname={pathname}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export const mapStateToProps = state => ({
+  searchText: state.searchText,
   events: state.events,
   userEvents: state.userEvents
 });
@@ -61,5 +69,6 @@ export default connect(mapStateToProps)(EventContainer);
 
 EventContainer.propTypes = {
   events: PropTypes.array,
-  userEvents: PropTypes.array
+  userEvents: PropTypes.array,
+  searchText: PropTypes.string
 };
