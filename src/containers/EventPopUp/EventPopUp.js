@@ -2,17 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
+import { changeUserEvent } from '../../thunks/changeUserEvent';
 
-export const EventPopUp = ({ getEvent, match, history }) => {
+export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEvent }) => {
   const [event, updateEvent] =  useState({});
   const [showVideo, updateShowVideo] = useState(false);
+  const [status, updateStatus] = useState('');
 
+  const getStatus = (id) => {
+    const match = userEvents.find(event => event.id === id);
+    if (match) {
+      updateStatus(match.attributes.status)
+    }
+  }
+
+  const updateEventStatus = (e) => {
+    const { id } = match.params;
+    const newStatus = e.target.id;
+    if (status === '') {
+      changeUserEvent(id, 'POST', newStatus);
+    } else if (status === newStatus) {
+      changeUserEvent(id, 'DELETE');
+    } else {
+      changeUserEvent(id, 'PUT', newStatus);
+    }
+    updateStatus(newStatus);
+  }
+  
   useEffect(() => {
     const fetchEvent = async () => {
       const event = await getEvent(match.params.id);
-      updateEvent(event)
+      updateEvent(event);
     }
     fetchEvent();
+    getStatus(match.params.id);
   }, []);
 
   const displayToShow = () => {
@@ -45,8 +68,12 @@ export const EventPopUp = ({ getEvent, match, history }) => {
             <p>{description}</p>
             <a className='event-link' href={event_url}>Event Website</a>
             <div className='button-div'>
-              <button className='wishlist-button'></button>
-              <button className='attending-button'></button>
+              <button id='wishlist' onClick={updateEventStatus} className=
+                {(status === 'wishlist') ? 'wishlist-button wishlist-active' : 'wishlist-button'}
+              ></button>
+              <button id='attending' onClick={updateEventStatus} className=
+                {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
+              ></button>
             </div>
           </div>
         </div>
@@ -57,11 +84,16 @@ export const EventPopUp = ({ getEvent, match, history }) => {
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  getEvent: (id) => dispatch(getEvent(id)),
+export const mapStateToProps = (state) => ({
+  userEvents: state.userEvents,
 });
 
-export default connect(null, mapDispatchToProps)(EventPopUp);
+export const mapDispatchToProps = (dispatch) => ({
+  getEvent: (id) => dispatch(getEvent(id)),
+  changeUserEvent: (id, method, status) => dispatch(changeUserEvent(id, method, status)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventPopUp);
 
 EventPopUp.propTypes = {
   getEvent: PropTypes.func,

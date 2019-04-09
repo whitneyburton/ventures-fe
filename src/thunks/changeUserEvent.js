@@ -1,4 +1,4 @@
-import { setUserEvents, setLoading, setError } from '../actions';
+import { setLoading, setError } from '../actions';
 import { getUserEvents } from './getUserEvents';
 import { fetchData } from '../utils/api';
 
@@ -8,8 +8,7 @@ export const changeUserEvent = (eventId, method, status = '') => {
       dispatch(setLoading(true));
       const path = status.length ? `?status=${status}` : status;
       await fetchData(`/users/1/events/${eventId}` + path, method);
-      const events = await getUserEvents('1');
-      dispatch(setUserEvents(events.data));
+      await getUserEvents('1');
     } catch (error) {
       dispatch(setError(error.message));
     }

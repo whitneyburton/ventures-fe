@@ -106,17 +106,28 @@
       background-size: cover;
     }
   }
+
   
   .attending-button {
     background: url('../images/add_to_attending.svg');
     background-size: cover;
-  
+    
     &:hover {
       background: url('../images/remove_from_attending.svg');
       background-size: cover;
     }
   }
   
+  .attending-active {
+    background: url('../images/remove_from_attending.svg');
+    background-size: cover;
+  }
+
+  .wishlist-active {
+    background: url('../images/remove_from_wishlist.svg');
+    background-size: cover;
+  }
+
   .close-pop-up {
     display: block;
     margin: 10px 10px 0 auto;
