@@ -36,7 +36,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
     }
     fetchEvent();
     getStatus(match.params.id);
-  }, []);
+  });
 
   const displayToShow = () => {
     const { image_url, video_url } = event;
