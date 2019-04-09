@@ -18,7 +18,7 @@ exports[`Filters should match the snapshot 1`] = `
       key="Type"
       value=""
     >
-      Event Type
+      All Event Types
     </option>
     <option
       key="climbing"
@@ -36,11 +36,11 @@ exports[`Filters should match the snapshot 1`] = `
       key="Month"
       value=""
     >
-      Month
+      All Months
     </option>
     <option
       key="January"
-      value="January"
+      value={1}
     >
       January
        (
@@ -49,7 +49,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="February"
-      value="February"
+      value={2}
     >
       February
        (
@@ -58,7 +58,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="March"
-      value="March"
+      value={3}
     >
       March
        (
@@ -67,7 +67,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="April"
-      value="April"
+      value={4}
     >
       April
        (
@@ -76,7 +76,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="May"
-      value="May"
+      value={5}
     >
       May
        (
@@ -85,7 +85,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="June"
-      value="June"
+      value={6}
     >
       June
        (
@@ -94,7 +94,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="July"
-      value="July"
+      value={7}
     >
       July
        (
@@ -103,7 +103,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="August"
-      value="August"
+      value={8}
     >
       August
        (
@@ -112,7 +112,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="September"
-      value="September"
+      value={9}
     >
       September
        (
@@ -121,7 +121,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="October"
-      value="October"
+      value={10}
     >
       October
        (
@@ -130,7 +130,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="November"
-      value="November"
+      value={11}
     >
       November
        (
@@ -139,7 +139,7 @@ exports[`Filters should match the snapshot 1`] = `
     </option>
     <option
       key="December"
-      value="December"
+      value={12}
     >
       December
        (
@@ -156,7 +156,7 @@ exports[`Filters should match the snapshot 1`] = `
       key="State"
       value=""
     >
-      State
+      All States
     </option>
     <option
       key="CO"
