@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
 import { changeUserEvent } from '../../thunks/changeUserEvent';
+import { getUserEvents } from '../../thunks/getUserEvents';
 
-export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEvent }) => {
+export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEvent, getUserEvents }) => {
   const [event, updateEvent] =  useState({});
   const [showVideo, updateShowVideo] = useState(false);
   const [status, updateStatus] = useState('');
@@ -16,16 +17,17 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
     }
   }
 
-  const updateEventStatus = (e) => {
+  const updateEventStatus = async (e) => {
     const { id } = match.params;
     const newStatus = e.target.id;
     if (status === '') {
-      changeUserEvent(id, 'POST', newStatus);
+      await changeUserEvent(id, 'POST', newStatus);
     } else if (status === newStatus) {
-      changeUserEvent(id, 'DELETE');
+      await changeUserEvent(id, 'DELETE');
     } else {
-      changeUserEvent(id, 'PUT', newStatus);
+      await changeUserEvent(id, 'PUT', newStatus);
     }
+    await getUserEvents('1');
     updateStatus(newStatus);
   }
   
@@ -36,7 +38,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
     }
     fetchEvent();
     getStatus(match.params.id);
-  });
+  }, []);
 
   const displayToShow = () => {
     const { image_url, video_url } = event;
@@ -80,7 +82,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
       </div>
     )
   } else {
-    return(<div>Loading...</div>)
+    return (<div>Loading...</div>)
   }
 }
 
@@ -91,6 +93,7 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   getEvent: (id) => dispatch(getEvent(id)),
   changeUserEvent: (id, method, status) => dispatch(changeUserEvent(id, method, status)),
+  getUserEvents: (id) => dispatch(getUserEvents(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventPopUp);
