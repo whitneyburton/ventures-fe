@@ -5,7 +5,8 @@ import { mockEvents } from '../data/mockData';
 
 const mockProps = {
   events: mockEvents.data,
-  pathname: '/profile'
+  pathname: '/profile',
+  searchText: 's',
 };
 
 describe('EventContainer', () => {
@@ -20,7 +21,7 @@ describe('EventContainer', () => {
   });
 
   it('should match the snapshot for the /home path', () => {
-    wrapper = shallow(<EventContainer events={mockEvents.data} pathname={'/home'} />)
+    wrapper = shallow(<EventContainer events={mockEvents.data} pathname={'/home'} searchText={mockProps.searchText} />)
     expect(wrapper).toMatchSnapshot()
   })
 
@@ -28,11 +29,13 @@ describe('EventContainer', () => {
     it('should return a props object with events', () => {
       const mockState = {
         events: mockEvents,
+        searchText: mockProps.searchText,
         isLoading: true,
         error: ''
       };
       const expectedState = {
-        events: mockEvents
+        events: mockEvents,
+        searchText: mockProps.searchText,
       };
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expectedState);
