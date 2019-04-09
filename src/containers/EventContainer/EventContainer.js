@@ -26,14 +26,20 @@ export const EventContainer = ({
     return userEvents.filter(event => event.attributes.status === status);
   };
 
+  const filterEventsByDate = (future) => {
+    const filteredEvents = filterUserEvents('attending');
+    return filteredEvents.filter(event => {
+      const eventDate = new Date(event.attributes.end_date);
+      return future ? eventDate >= Date.now() : eventDate < Date.now();
+    });
+  }
+
   let shownEvents;
 
-  if (pathname.includes('upcoming')) {
-    shownEvents = filterUserEvents('attending');
+  if (pathname.includes('upcoming') || pathname.includes('past')) {
+    shownEvents = pathname.includes('upcoming') ? filterEventsByDate(true) : filterEventsByDate(false);
   } else if (pathname.includes('wishlist')) {
     shownEvents = filterUserEvents('wishlist');
-  } else if (pathname.includes('past')) {
-    shownEvents = filterUserEvents('past');
   } else {
     shownEvents = searchText.length ? filterEvents() : events;
   }
