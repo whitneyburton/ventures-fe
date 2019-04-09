@@ -9,7 +9,6 @@ export const getEvents = (event_type = '', month = '', state = '') => {
       if (event_type.length) path = path + `&event_type=${event_type}`;
       if (month.length) path = path + `&month=${month}`;
       if (state.length) path = path + `&state=${state}`;
-      console.log(path)
       const events = await fetchData('/events' + path, 'GET');
       dispatch(setEvents(events.data));
     } catch (error) {
