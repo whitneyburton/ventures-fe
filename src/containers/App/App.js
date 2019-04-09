@@ -9,12 +9,14 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
 import { getUser } from '../../thunks/getUser';
+import { getUserEvents } from '../../thunks/getUserEvents';
 import PropTypes from 'prop-types';
 
-export const App = ({ getEvents, getUser, location, error }) => {
+export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
   useEffect(() => {
     getUser('1');
     getEvents();
+    getUserEvents('1');
   }, []);
 
   if (!error) {
@@ -58,6 +60,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   getEvents: () => dispatch(getEvents()),
+  getUserEvents: id => dispatch(getUserEvents(id)),
   getUser: id => dispatch(getUser(id))
 });
 
@@ -71,5 +74,6 @@ export default withRouter(
 App.propTypes = {
   error: PropTypes.string,
   getEvents: PropTypes.func,
-  getUser: PropTypes.func
+  getUser: PropTypes.func,
+  getUserEvents: PropTypes.func
 };
