@@ -40,7 +40,9 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
         </Switch>
         <Switch>
           <Route path="/event/:id" component={EventPopUp} />
-          <Route path="/profile/event/:id" component={EventPopUp} />
+          <Route path="/profile/upcoming/event/:id" component={EventPopUp} />
+          <Route path="/profile/wishlist/event/:id" component={EventPopUp} />
+          <Route path="/profile/past/event/:id" component={EventPopUp} />
         </Switch>
       </div>
     );
