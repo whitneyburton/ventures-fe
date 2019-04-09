@@ -46,21 +46,24 @@ export const EventContainer = ({
 
   return (
     <div className={styles}>
-      {shownEvents.map(event => {
-        const { name, image_url, city, state, start_date } = event.attributes;
-        return (
-          <EventCard
-            id={event.id}
-            key={event.id}
-            name={name}
-            image={image_url}
-            city={city}
-            state={state}
-            date={start_date}
-            pathname={pathname}
-          />
-        );
-      })}
+      {shownEvents.length ?
+        shownEvents.map(event => {
+          const { name, image_url, city, state, start_date } = event.attributes;
+          return (
+            <EventCard
+              id={event.id}
+              key={event.id}
+              name={name}
+              image={image_url}
+              city={city}
+              state={state}
+              date={start_date}
+              pathname={pathname}
+            />
+          );
+        }) :
+        <h2>No events to show</h2>
+      }
     </div>
   );
 };
