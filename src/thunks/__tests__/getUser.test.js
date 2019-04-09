@@ -49,5 +49,5 @@ describe('getUser', () => {
     const thunk = getUser(mockUserId);
     await thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(setError('Error fetching data.'));
-  })
+  });
 });
