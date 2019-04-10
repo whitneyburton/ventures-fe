@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import searchIcon from '../../images/search.svg';
 import { setSearchText } from '../../actions';
 import { connect } from 'react-redux';
