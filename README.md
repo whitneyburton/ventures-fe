@@ -36,6 +36,7 @@ Run `npm test` from the associated root directory.
 
 ### Wireframes:
 Created with [Figma](https://www.figma.com/file/HT6bEdxRt724UmLwjYzNW0iS/Ventures?node-id=12%3A0)
+
 ![Keeper wireframes](./src/images/wireframes.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
