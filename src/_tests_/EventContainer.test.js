@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { EventContainer, mapStateToProps } from '../containers/EventContainer/EventContainer';
-import { mockEvents } from '../data/mockData';
+import { mockEvents, mockUserEvents } from '../data/mockData';
 
 const mockProps = {
   events: mockEvents.data,
   pathname: '/profile',
-  searchText: 's',
+  searchText: '',
+  userEvents: mockUserEvents,
 };
 
 describe('EventContainer', () => {
@@ -20,22 +21,29 @@ describe('EventContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should match the snapshot for the /home path', () => {
+  it('should match the snapshot for the /home path with no search text', () => {
     wrapper = shallow(<EventContainer events={mockEvents.data} pathname={'/home'} searchText={mockProps.searchText} />)
     expect(wrapper).toMatchSnapshot()
-  })
+  });
+
+  it('should match the snapshot for the /home path with search text', () => {
+    wrapper = shallow(<EventContainer events={mockEvents.data} pathname={'/home'} searchText='sea' />)
+    expect(wrapper).toMatchSnapshot()
+  });
 
   describe('mapStateToProps', () => {
     it('should return a props object with events', () => {
       const mockState = {
         events: mockEvents,
         searchText: mockProps.searchText,
+        userEvents: mockProps.mockUserEvents,
         isLoading: true,
         error: ''
       };
       const expectedState = {
         events: mockEvents,
         searchText: mockProps.searchText,
+        userEvents: mockProps.mockUserEvents
       };
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expectedState);
