@@ -94,7 +94,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
                 {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
               >
               </button>
-              <ReactTooltip id='attending-tip' type='dark' effect='solid' place='top'>
+              <ReactTooltip id='attending-tip' type='dark' effect='solid'>
                 {(status === 'attending') ? 'Remove from attending' : 'Add to attending'}
               </ReactTooltip>
             </div>
