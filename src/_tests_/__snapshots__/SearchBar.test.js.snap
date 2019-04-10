@@ -22,6 +22,7 @@ exports[`SearchBar should match the snapshot 1`] = `
       name="searchQuery"
       onChange={[Function]}
       placeholder="Search all events"
+      value="search text"
     />
   </div>
 </div>
