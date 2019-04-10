@@ -29,8 +29,10 @@ Run `npm test` from the associated root directory.
 [Cross Pollination Capstone Project](http://frontend.turing.io/projects/capstone.html) through [Turing School of Software & Design](https://turing.io/).
 
 ### Contributors
-[Karin Ohman](https://github.com/kaohman)  
-[Whitney Burton](https://github.com/whitneyburton) 
+**[Karin Ohman](https://github.com/kaohman)**
+**[Whitney Burton](https://github.com/whitneyburton)**
+**[Anna Smolentzov](https://github.com/asmolentzov)**
+**[Mary Goodhart](https://github.com/mgoodhart5)**
 
 ### Wireframes:
 Created with [Figma](https://www.figma.com/file/HT6bEdxRt724UmLwjYzNW0iS/Ventures?node-id=12%3A0)
