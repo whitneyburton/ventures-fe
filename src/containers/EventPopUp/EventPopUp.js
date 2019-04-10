@@ -22,13 +22,15 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
     const newStatus = e.target.id;
     if (status === '') {
       await changeUserEvent(id, 'POST', newStatus);
+      updateStatus(newStatus);
     } else if (status === newStatus) {
       await changeUserEvent(id, 'DELETE');
+      updateStatus('');
     } else {
       await changeUserEvent(id, 'PUT', newStatus);
+      updateStatus(newStatus);
     }
     await getUserEvents('1');
-    updateStatus(newStatus);
   }
   
   useEffect(() => {
