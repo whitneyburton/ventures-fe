@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
 import { changeUserEvent } from '../../thunks/changeUserEvent';
 import { getUserEvents } from '../../thunks/getUserEvents';
+import ReactTooltip from 'react-tooltip';
 
 export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEvent, getUserEvents }) => {
   const [event, updateEvent] =  useState({});
@@ -72,12 +73,30 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
             <p>{description}</p>
             <a className='event-link' href={event_url}>Event Website</a>
             <div className='button-div'>
-              <button id='wishlist' onClick={updateEventStatus} className=
+              <button 
+                id='wishlist' 
+                data-tip
+                data-for='wishlist-tip'
+                onClick={updateEventStatus} 
+                className=
                 {(status === 'wishlist') ? 'wishlist-button wishlist-active' : 'wishlist-button'}
-              ></button>
-              <button id='attending' onClick={updateEventStatus} className=
+              >
+              </button>
+              <ReactTooltip id='wishlist-tip' type='dark' effect='solid' place='left'>
+                {(status === 'wishlist') ? 'Remove from wishlist' : 'Add to wishlist'}
+              </ReactTooltip>
+              <button 
+                id='attending' 
+                data-tip
+                data-for='attending-tip'
+                onClick={updateEventStatus} 
+                className=
                 {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
-              ></button>
+              >
+              </button>
+              <ReactTooltip id='attending-tip' type='dark' effect='solid' place='top'>
+                {(status === 'attending') ? 'Remove from attending' : 'Add to attending'}
+              </ReactTooltip>
             </div>
           </div>
         </div>
