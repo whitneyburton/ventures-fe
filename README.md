@@ -9,7 +9,8 @@ Run: `npm start` and visit localhost:3001 in your browser
 
 #### Back-end
 (Associated backend repo can be found [here](https://github.com/mgoodhart5/ventures-be)).
-Clone this repo by running: `git clone git@github.com:dForDeveloper/trapper-keeper-api.git`  
+
+Clone this repo by running: `git clone https://github.com/mgoodhart5/ventures-be.git`  
 Run: `npm install` from the root directory  
 Run: `npm start` and visit localhost:3000/api/v1/events in your browser to see all events.
 Further directions for other endpoints are listed on the backend repo's README.
@@ -30,8 +31,11 @@ Run `npm test` from the associated root directory.
 
 ### Contributors
 **[Karin Ohman](https://github.com/kaohman)**
+
 **[Whitney Burton](https://github.com/whitneyburton)**
+
 **[Anna Smolentzov](https://github.com/asmolentzov)**
+
 **[Mary Goodhart](https://github.com/mgoodhart5)**
 
 ### Wireframes:
