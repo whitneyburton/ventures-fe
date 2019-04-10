@@ -22,7 +22,15 @@ exports[`App should match the correct snapshot 1`] = `
     />
     <Route
       component={[Function]}
-      path="/profile/event/:id"
+      path="/profile/upcoming/event/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/profile/wishlist/event/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/profile/past/event/:id"
     />
   </Switch>
 </div>
