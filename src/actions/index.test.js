@@ -51,4 +51,14 @@ describe('actions', () => {
     const result = actions.setError(mockError);
     expect(result).toEqual(expected);
   });
+
+  it('should return a type of SET_SEARCH_TEXT with text', () => {
+    const mockText = 'Search text';
+    const expected = {
+      type: 'SET_SEARCH_TEXT',
+      searchText: mockText
+    };
+    const result = actions.setSearchText(mockText);
+    expect(result).toEqual(expected);
+  });
 });
