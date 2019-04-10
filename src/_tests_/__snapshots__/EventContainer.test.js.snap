@@ -1,82 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventContainer should match the snapshot for the /home path 1`] = `
-<div
-  className="EventContainer home"
->
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="1"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="1"
-    name="Shelf Road Craggin' Classic"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="2"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="2"
-    name="Hueco Rock Rodeo"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="3"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="3"
-    name="Flash Foxy Women's Climbing Festival"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="4"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="4"
-    name="Flash Foxy Summerfest"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="5"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="5"
-    name="International Climber's Festival"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="6"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="6"
-    name="Leavenworth Rock Fest"
-    pathname="/home"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="3"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="3"
-    name="Joes Valley Fest"
-    pathname="/home"
-    state="CO"
-  />
-</div>
-`;
-
 exports[`EventContainer should match the snapshot for the /home path with no search text 1`] = `
 <div
   className="EventContainer home"
@@ -168,56 +91,16 @@ exports[`EventContainer should match the snapshot for the /profile path 1`] = `
 <div
   className="EventContainer profile"
 >
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="1"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="1"
-    name="Shelf Road Craggin' Classic"
-    pathname="/profile"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="2"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="2"
-    name="Hueco Rock Rodeo"
-    pathname="/profile"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="3"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="3"
-    name="Flash Foxy Women's Climbing Festival"
-    pathname="/profile"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="4"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="4"
-    name="Flash Foxy Summerfest"
-    pathname="/profile"
-    state="CO"
-  />
-  <EventCard
-    city="Canon Springs"
-    date="10-19-2018"
-    id="5"
-    image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
-    key="5"
-    name="International Climber's Festival"
-    pathname="/profile"
-    state="CO"
-  />
+  <h2>
+    No events to show
+  </h2>
+</div>
+`;
+
+exports[`EventContainer should match the snapshot for the /profile/past path 1`] = `
+<div
+  className="EventContainer profile"
+>
   <EventCard
     city="Canon Springs"
     date="10-19-2018"
@@ -225,9 +108,26 @@ exports[`EventContainer should match the snapshot for the /profile path 1`] = `
     image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
     key="6"
     name="Leavenworth Rock Fest"
-    pathname="/profile"
+    pathname="/profile/past"
     state="CO"
   />
+</div>
+`;
+
+exports[`EventContainer should match the snapshot for the /profile/upcoming path 1`] = `
+<div
+  className="EventContainer profile"
+>
+  <h2>
+    No events to show
+  </h2>
+</div>
+`;
+
+exports[`EventContainer should match the snapshot for the /profile/wishlist path 1`] = `
+<div
+  className="EventContainer profile"
+>
   <EventCard
     city="Canon Springs"
     date="10-19-2018"
@@ -235,7 +135,7 @@ exports[`EventContainer should match the snapshot for the /profile path 1`] = `
     image="https://static1.squarespace.com/static/55830fd9e4b0ec758c892f81/57bc7284f7e0abe0efbb523e/59417dc21b631bad37b19a74/1497464437416/_MG_1604.jpg"
     key="3"
     name="Joes Valley Fest"
-    pathname="/profile"
+    pathname="/profile/wishlist"
     state="CO"
   />
 </div>
