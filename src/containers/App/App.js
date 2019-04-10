@@ -51,6 +51,7 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
       <div className="App">
         <NavBar />        
         <h1>Sorry, there was an error. Please try again.</h1>
+        <button className='back-button' onClick={() => window.location.reload()}>Go Back</button>
       </div>
     );
   }
