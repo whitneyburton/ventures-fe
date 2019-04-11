@@ -32,6 +32,33 @@ describe('Profile', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match the snapshot for editing profile', () => {
+    wrapper.find('.edit-profile-button').simulate('click');
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should update the text of the button on click', () => {
+    expect(wrapper.find('.edit-profile-button').text()).toBe('Edit Profile')
+    wrapper.find('.edit-profile-button').simulate('click');
+    expect(wrapper.find('.edit-profile-button').text()).toBe('Save')
+  });
+
+  it('should change the name', () => {
+    const mockEvent = { target: { value: 'Whitney' } }
+    wrapper.find('.edit-profile-button').simulate('click');
+    wrapper.find('.edit-name-input').simulate('change', mockEvent);
+    wrapper.find('.edit-profile-button').simulate('click');
+    expect(wrapper.find('.user-name').text()).toBe('WHITNEY')
+  });
+
+  it('should change the bio', () => {
+    const mockEvent = { target: { value: 'I love climbing!' } }
+    wrapper.find('.edit-profile-button').simulate('click');
+    wrapper.find('.edit-bio-input').simulate('change', mockEvent);
+    wrapper.find('.edit-profile-button').simulate('click');
+    expect(wrapper.find('.user-bio').text()).toBe('I love climbing!')
+  });
+
   describe('mapStateToProps', () => {
     it('should return a props object with events', () => {
       const mockState = {
