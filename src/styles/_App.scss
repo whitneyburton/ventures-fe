@@ -25,11 +25,16 @@
     border-radius: 10px;
     background-color: whitesmoke;
   }
+
+  .error-message {
+    margin-top: 100px;
+  }
 }
 
 input,
 button,
-select {
+select,
+textarea {
   outline: none;
   
   &:active {

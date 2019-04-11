@@ -48,11 +48,11 @@ export const Profile = ({ location, user, updateUser }) => {
             {!contentEditable ? (
               <p className='user-bio'>{bio}</p>
             ) : (
-              <input
+              <textarea
                 className='edit-bio-input'
                 value={bio}
                 onChange={e => editBio(e.target.value)}
-              />
+              ></textarea>
             )}
           </div>
         </div>
