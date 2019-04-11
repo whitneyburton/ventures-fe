@@ -30,9 +30,28 @@
     border: none;
     cursor: pointer;
   }
+  
+  .home-active {
+    background: url(../images/home-active.svg);
+    background-size: cover;
+    height: 33px;
+    width: 33px;
+    border: none;
+    cursor: pointer;
+  }
 
   .profile-button {
     background: url(../images/profile.svg);
+    background-size: cover;
+    height: 33px;
+    width: 33px;
+    border: none;
+    cursor: pointer;
+
+  }
+  
+  .profile-active {
+    background: url(../images/profile-active.svg);
     background-size: cover;
     height: 33px;
     width: 33px;
@@ -80,6 +99,8 @@
 @media screen and (max-width: 550px) { 
   .NavBar {
     order: 2;
+    position: fixed;
+    top: 90%;
 
     .ventures-slogan {
       display: none;
