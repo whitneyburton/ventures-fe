@@ -41,14 +41,18 @@ exports[`App should match the snapshot when there is an error 1`] = `
   className="App"
 >
   <NavBar />
-  <h1>
-    Sorry, there was an error. Please try again.
-  </h1>
-  <button
-    className="back-button"
-    onClick={[Function]}
+  <div
+    className="error-message"
   >
-    Go Back
-  </button>
+    <h1>
+      Sorry, there was an error. Please try again.
+    </h1>
+    <button
+      className="back-button"
+      onClick={[Function]}
+    >
+      Go Back
+    </button>
+  </div>
 </div>
 `;
