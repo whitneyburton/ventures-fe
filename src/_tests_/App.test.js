@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { App, mapStateToProps, mapDispatchToProps } from '../containers/App/App';
 import { shallow } from 'enzyme';
 import { getUser } from '../thunks/getUser';
 import { getEvents } from '../thunks/getEvents';
+import { getUserEvents } from '../thunks/getUserEvents';
 jest.mock('../thunks/getUser');
+jest.mock('../thunks/getUserEvents');
 jest.mock('../thunks/getEvents');
 
 describe('App', () => {
@@ -25,8 +27,20 @@ describe('App', () => {
     )
   });
 
-  it('should match the correct snapshot', () => {
+  it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot when there is an error', () => {
+    wrapper = shallow(<App error='Error fetching data.' />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call window.location.reload when the Go Back button is clicked', () => {
+    wrapper = shallow(<App error='Error fetching data.' />);
+    window.location.reload = jest.fn();
+    wrapper.find('.back-button').simulate('click');
+    expect(window.location.reload).toHaveBeenCalledTimes(1);
   });
 
   describe('mapStateToProps', () => {
@@ -55,6 +69,14 @@ describe('App', () => {
     it('should call dispatch when getUser is called', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = getUser();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.getUser();
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch when getUserEvents', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = getUserEvents();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.getUser();
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
