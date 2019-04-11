@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match the correct snapshot 1`] = `
+exports[`App should match the snapshot 1`] = `
 <div
   className="App"
 >
@@ -33,5 +33,22 @@ exports[`App should match the correct snapshot 1`] = `
       path="/profile/past/event/:id"
     />
   </Switch>
+</div>
+`;
+
+exports[`App should match the snapshot when there is an error 1`] = `
+<div
+  className="App"
+>
+  <NavBar />
+  <h1>
+    Sorry, there was an error. Please try again.
+  </h1>
+  <button
+    className="back-button"
+    onClick={[Function]}
+  >
+    Go Back
+  </button>
 </div>
 `;
