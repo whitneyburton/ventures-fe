@@ -113,5 +113,17 @@
     .user-profile {
       padding: 1% 2%;
     }
+
+    .bio-header {
+      flex-direction: column;
+    }    
+
+    .user-name {
+      margin: 8px;
+    }
+
+    .edit-profile-button {
+      margin-left: auto;
+    }
   }
 }

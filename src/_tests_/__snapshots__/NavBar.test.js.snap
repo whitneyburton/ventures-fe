@@ -19,10 +19,13 @@ exports[`NavBar should match the snapshot 1`] = `
     A place to find and track outdoor events that speak to you.
   </p>
   <NavLink
+    activeClassName="home-active"
     className="home-button"
+    exact={true}
     to="/"
   />
   <NavLink
+    activeClassName="profile-active"
     className="profile-button"
     to="/profile/upcoming"
   />
