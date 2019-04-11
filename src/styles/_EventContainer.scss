@@ -1,7 +1,10 @@
+
+
 .EventContainer {
   overflow: scroll;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  grid-template-rows: auto;
   grid-gap: 10px;
   justify-content: center;
 }
@@ -13,4 +16,11 @@
 .profile {
   padding-top: 10px;
   height: 55vh;
+}
+
+@media screen and (max-width: 1000px) {  
+  .home {
+    height: 63vh;
+  }
+  
 }

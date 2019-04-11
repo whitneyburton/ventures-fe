@@ -1,6 +1,5 @@
 .Filters {
-  height: 12vh;
-  width: 50%;
+  width: 65%;
 
   .filters-title {
     margin: 10px;
@@ -8,12 +7,37 @@
 
   select {
     border: none;
-    margin: 5px;
-    height: 40px;
-    width: 31%;
+    margin: 0px 5px;
+    height: 45px;
+    width: 30%;
+    font-size: 14px;
   }
 
   option {
     padding: 10px;
+  }
+
+  .reset-filters { 
+    background: url(../images/refresh.svg);
+    background-size: cover;
+    height: 21px;
+    width: 24px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: url(../images/refresh-hover.svg);
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {  
+  .Filters {
+    width: 100%
+  }
+
+  select {
+    font-size: 12px;
   }
 }

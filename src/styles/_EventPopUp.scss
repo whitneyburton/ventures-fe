@@ -5,9 +5,15 @@
   top: 0;
   width: 100%;
   z-index: 9;
+  background-color: #7676768f;
 }
 
 .EventPopUp {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
   border: 1px solid black;
   width: 900px;
   height: 405px;
@@ -35,6 +41,9 @@
 
   .text-container {
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   h2,
@@ -84,7 +93,7 @@
   
   .button-div {
     width: 90px;
-    margin: 0 0 0 auto;
+    margin: 0 0 5px auto;
   }
   
   .wishlist-button,

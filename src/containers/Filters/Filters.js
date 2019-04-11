@@ -8,6 +8,12 @@ export const Filters = ({ events, getEvents }) => {
   const [month, updateMonth] = useState('');
   const [state, updateState] = useState('');
 
+  const clearFilters = () => {
+    updateType('');
+    updateMonth('');
+    updateState('');
+  }
+
   useEffect(() => {
     getEvents(eventType, month, state)
   }, [eventType, month, state]);
@@ -75,6 +81,7 @@ export const Filters = ({ events, getEvents }) => {
           <option key='State'value=''>All States</option>
           {setFilters('state')}
         </select>
+        <button className='reset-filters' onClick={() => clearFilters()}></button>
       </div>
     );
   } else {
@@ -93,5 +100,6 @@ export const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Filters);
 
 Filters.propTypes = {
-  events: PropTypes.array
+  events: PropTypes.array,
+  getEvents: PropTypes.func
 }

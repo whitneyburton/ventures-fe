@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
@@ -55,7 +55,8 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
   if (event.name) {
     const { name, city, state, event_type, price, start_date, end_date, description, event_url } = event;
     return (
-      <div className='overlay'>
+      <Fragment>
+        <div className='overlay'></div>
         <div className='EventPopUp'>
           <div className='display-panel'>
             {displayToShow()}
@@ -99,8 +100,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
               </ReactTooltip>
             </div>
           </div>
-        </div>
-      </div>
+      </Fragment>
     )
   } else {
     return (<div>Loading...</div>)
