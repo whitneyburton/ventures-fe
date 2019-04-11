@@ -22,7 +22,7 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
   if (!error) {
     return (
       <div className='App'>
-        <NavBar pathname={location.pathname} />
+        <NavBar />
         <Switch>
           <Route path='/profile' component={Profile} />
           <Route
