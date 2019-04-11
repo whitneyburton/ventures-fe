@@ -6,7 +6,7 @@ describe('NavBar', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<NavBar />)
+    wrapper = shallow(<NavBar pathname={'/'}/>)
   });
 
   it('should match the snapshot', () => {
