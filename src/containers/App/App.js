@@ -21,15 +21,15 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
 
   if (!error) {
     return (
-      <div className="App">
-        <NavBar />
+      <div className='App'>
+        <NavBar pathname={location.pathname} />
         <Switch>
-          <Route path="/profile" component={Profile} />
+          <Route path='/profile' component={Profile} />
           <Route
-            path="/"
+            path='/'
             render={() => (
               <Fragment>
-                <div className="search-and-filters">
+                <div className='search-and-filters'>
                   <SearchBar />
                   <Filters />
                 </div>
@@ -39,19 +39,23 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
           />
         </Switch>
         <Switch>
-          <Route path="/event/:id" component={EventPopUp} />
-          <Route path="/profile/upcoming/event/:id" component={EventPopUp} />
-          <Route path="/profile/wishlist/event/:id" component={EventPopUp} />
-          <Route path="/profile/past/event/:id" component={EventPopUp} />
+          <Route path='/event/:id' component={EventPopUp} />
+          <Route path='/profile/upcoming/event/:id' component={EventPopUp} />
+          <Route path='/profile/wishlist/event/:id' component={EventPopUp} />
+          <Route path='/profile/past/event/:id' component={EventPopUp} />
         </Switch>
       </div>
     );
   } else {
     return (
-      <div className="App">
-        <NavBar />        
+      <div className='App'>
+        <NavBar />
         <h1>Sorry, there was an error. Please try again.</h1>
-        <button className='back-button' onClick={() => window.location.reload()}>Go Back</button>
+        <button
+          className='back-button'
+          onClick={() => window.location.reload()}>
+          Go Back
+        </button>
       </div>
     );
   }

@@ -7,6 +7,7 @@
 .App {
   display: grid; 
   grid-template-columns: 1fr;
+  grid-template-rows: 10% 15% auto;
   font-family: $main-font;
   text-align: center;
   margin: 0;
@@ -33,5 +34,27 @@ select {
   
   &:active {
     outline: none;
+  }
+}
+
+
+@media screen and (max-width: 1000px) { 
+  .App {
+    grid-template-rows: 10% 27% auto;
+    
+    .search-and-filters {
+      flex-direction: column;
+      height: 25vh;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .App {
+    grid-template-rows: 30% 70%;
+    
+    .search-and-filters {
+      padding: 1% 0%;
+    }
   }
 }
