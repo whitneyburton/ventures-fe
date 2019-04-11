@@ -25,6 +25,7 @@ exports[`NavBar should match the snapshot 1`] = `
     to="/"
   />
   <NavLink
+    activeClassName="profile-active"
     className="profile-button"
     to="/profile/upcoming"
   />

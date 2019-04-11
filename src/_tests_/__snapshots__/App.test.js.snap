@@ -4,9 +4,7 @@ exports[`App should match the correct snapshot 1`] = `
 <div
   className="App"
 >
-  <NavBar
-    pathname="/"
-  />
+  <NavBar />
   <Switch>
     <Route
       component={[Function]}
