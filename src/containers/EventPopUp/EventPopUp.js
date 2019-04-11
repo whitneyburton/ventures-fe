@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getEvent } from '../../thunks/getEvent';
@@ -52,34 +52,35 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
   if (event.name) {
     const { name, city, state, event_type, price, start_date, end_date, description, event_url } = event;
     return (
-      <div className='overlay'>
-        <div className='EventPopUp'>
-          <div className='display-panel'>
-            {displayToShow()}
-            <button className={showVideo ? 'back arrow' : 'forward arrow'} onClick={() => updateShowVideo(!showVideo)}></button>
-          </div>
-          <div className='text-container'>
-            <button onClick={() => history.goBack()} className='close-pop-up'></button>
-            <h2>{name}</h2>
-            <h4>{city}, {state}</h4>
-            <h4>Date(s): <span className='light-text'>
-              {start_date === end_date ? `${start_date}` : `${start_date} to ${end_date}`}
-            </span></h4>
-            <h4 className='event-type'>Event Type: <span className='light-text'>{event_type}</span></h4>
-            <h4>Price: <span className='light-text'>${price}</span></h4>
-            <p>{description}</p>
-            <a className='event-link' href={event_url}>Event Website</a>
-            <div className='button-div'>
-              <button id='wishlist' onClick={updateEventStatus} className=
-                {(status === 'wishlist') ? 'wishlist-button wishlist-active' : 'wishlist-button'}
-              ></button>
-              <button id='attending' onClick={updateEventStatus} className=
-                {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
-              ></button>
+      <Fragment>
+        <div className='overlay'></div>
+          <div className='EventPopUp'>
+            <div className='display-panel'>
+              {displayToShow()}
+              <button className={showVideo ? 'back arrow' : 'forward arrow'} onClick={() => updateShowVideo(!showVideo)}></button>
+            </div>
+            <div className='text-container'>
+              <button onClick={() => history.goBack()} className='close-pop-up'></button>
+              <h2>{name}</h2>
+              <h4>{city}, {state}</h4>
+              <h4>Date(s): <span className='light-text'>
+                {start_date === end_date ? `${start_date}` : `${start_date} to ${end_date}`}
+              </span></h4>
+              <h4 className='event-type'>Event Type: <span className='light-text'>{event_type}</span></h4>
+              <h4>Price: <span className='light-text'>${price}</span></h4>
+              <p>{description}</p>
+              <a className='event-link' href={event_url}>Event Website</a>
+              <div className='button-div'>
+                <button id='wishlist' onClick={updateEventStatus} className=
+                  {(status === 'wishlist') ? 'wishlist-button wishlist-active' : 'wishlist-button'}
+                ></button>
+                <button id='attending' onClick={updateEventStatus} className=
+                  {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
+                ></button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+      </Fragment>
     )
   } else {
     return (<div>Loading...</div>)

@@ -9,7 +9,6 @@ export const EventContainer = ({
   searchText,
   userEvents
 }) => {
-  
   const styles = pathname.includes('profile')
     ? 'EventContainer profile'
     : 'EventContainer home';
@@ -26,18 +25,20 @@ export const EventContainer = ({
     return userEvents.filter(event => event.attributes.status === status);
   };
 
-  const filterEventsByDate = (future) => {
+  const filterEventsByDate = future => {
     const filteredEvents = filterUserEvents('attending');
     return filteredEvents.filter(event => {
       const eventDate = new Date(event.attributes.end_date);
       return future ? eventDate >= Date.now() : eventDate < Date.now();
     });
-  }
+  };
 
   let shownEvents;
 
   if (pathname.includes('upcoming') || pathname.includes('past')) {
-    shownEvents = pathname.includes('upcoming') ? filterEventsByDate(true) : filterEventsByDate(false);
+    shownEvents = pathname.includes('upcoming')
+      ? filterEventsByDate(true)
+      : filterEventsByDate(false);
   } else if (pathname.includes('wishlist')) {
     shownEvents = filterUserEvents('wishlist');
   } else {
@@ -46,7 +47,7 @@ export const EventContainer = ({
 
   return (
     <div className={styles}>
-      {shownEvents.length ?
+      {shownEvents.length ? (
         shownEvents.map(event => {
           const { name, image_url, city, state, start_date } = event.attributes;
           return (
@@ -61,9 +62,10 @@ export const EventContainer = ({
               pathname={pathname}
             />
           );
-        }) :
+        })
+      ) : (
         <h2>No events to show</h2>
-      }
+      )}
     </div>
   );
 };
