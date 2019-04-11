@@ -100,6 +100,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
               </ReactTooltip>
             </div>
           </div>
+        </div>
       </Fragment>
     )
   } else {
