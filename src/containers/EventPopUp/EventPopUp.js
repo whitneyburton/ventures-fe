@@ -83,7 +83,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
                 {(status === 'wishlist') ? 'wishlist-button wishlist-active' : 'wishlist-button'}
               >
               </button>
-              <ReactTooltip id='wishlist-tip' type='dark' effect='solid' place='left'>
+              <ReactTooltip id='wishlist-tip' type='dark' effect='solid' place='top'>
                 {(status === 'wishlist') ? 'Remove from wishlist' : 'Add to wishlist'}
               </ReactTooltip>
               <button 
@@ -95,7 +95,7 @@ export const EventPopUp = ({ getEvent, match, history, userEvents, changeUserEve
                 {(status === 'attending') ? 'attending-button attending-active' : 'attending-button'}
               >
               </button>
-              <ReactTooltip id='attending-tip' type='dark' effect='solid'>
+              <ReactTooltip id='attending-tip' type='dark' effect='solid' place='top'>
                 {(status === 'attending') ? 'Remove from attending' : 'Add to attending'}
               </ReactTooltip>
             </div>
