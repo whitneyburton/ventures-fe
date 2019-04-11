@@ -185,3 +185,5 @@ exports[`Filters should match the snapshot 1`] = `
   </ReactTooltip>
 </div>
 `;
+
+exports[`Filters should match the snapshot with no events 1`] = `<div />`;

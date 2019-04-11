@@ -54,7 +54,7 @@ export const Filters = ({ events, getEvents }) => {
     getEvents(eventType, month, state)
   }, [eventType, month, state]);
 
-  if (events) {
+  if (events.length) {
     return (
       <div className="Filters">
         <h3 className="filters-title">FILTER EVENTS</h3>

@@ -1,13 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Profile, mapStateToProps, mapDispatchToProps } from '../containers/Profile/Profile';
-import { setUser } from '../actions';
 import { updateUser } from '../thunks/updateUser';
 import { mockUser } from '../data/mockData';
 jest.mock('../thunks/updateUser');
 
 const mockProps = {
-  setUser: jest.fn(),
   updateUser: jest.fn(),
   user: mockUser,
   location: { pathname: '/profile' }
@@ -21,6 +19,16 @@ describe('Profile', () => {
   });
 
   it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot for loading', () => {
+    const mockProps = {
+      updateUser: jest.fn(),
+      user: {},
+      location: { pathname: '/profile' }
+    };
+    wrapper = shallow(<Profile {...mockProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -40,14 +48,6 @@ describe('Profile', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('should call dispatch with the setUser action', () => {
-      const mockDispatch = jest.fn();
-      const actionToDispatch = setUser();
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.setUser();
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
-
     it('should call dispatch with the updateUser action', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = updateUser();

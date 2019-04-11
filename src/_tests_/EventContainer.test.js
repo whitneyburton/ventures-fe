@@ -103,11 +103,6 @@ describe('EventContainer', () => {
   });
 
   describe('filterEventsByDate', () => {
-    it.skip('should call filterUserEvents', () => {
-      let filterUserEvents = jest.fn();
-      filterEventsByDate(mockProps.userEvents, true);
-      expect(filterUserEvents).toHaveBeenCalledWith(mockProps.userEvents, 'attending');
-    });
     it('should return filtered events', () => {
       const expected = [
         {

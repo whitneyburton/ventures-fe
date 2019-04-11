@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import EventContainer from '../EventContainer/EventContainer';
-import { setUser } from '../../actions';
 import { updateUser } from '../../thunks/updateUser';
 
 export const Profile = ({ location, user, updateUser }) => {
@@ -95,7 +94,6 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setUser: user => dispatch(setUser(user)),
   updateUser: user => dispatch(updateUser(user))
 });
 
@@ -105,6 +103,5 @@ export default connect(
 )(Profile);
 
 Profile.propTypes = {
-  setUser: PropTypes.func,
   user: PropTypes.object
 };

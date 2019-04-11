@@ -75,3 +75,9 @@ exports[`Profile should match the snapshot 1`] = `
   />
 </div>
 `;
+
+exports[`Profile should match the snapshot for loading 1`] = `
+<h1>
+  Loading...
+</h1>
+`;

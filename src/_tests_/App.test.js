@@ -20,6 +20,7 @@ describe('App', () => {
     wrapper = shallow(
       <App
         getEvents={getEvents}
+        getUserEvents={getUserEvents}
         getUser={getUser}
         error={mockError}
         location={mockLocation}
@@ -78,7 +79,7 @@ describe('App', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = getUserEvents();
       const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.getUser();
+      mappedProps.getUserEvents();
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });

@@ -21,6 +21,15 @@ describe('Filters', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match the snapshot with no events', () => {
+    const mockProps = {
+      events: [],
+      getEvents,
+    };
+    wrapper = shallow(<Filters {...mockProps} />)
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe('formatType', () => {
     it('should return items with an uppercase first letter', () => {
       const result = formatType('item');

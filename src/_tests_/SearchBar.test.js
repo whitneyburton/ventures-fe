@@ -23,10 +23,10 @@ describe('SearchBar', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should call setSearchText onChange', () => {
-    const e = { target: { value: '' } };
-    wrapper.find('input').simulate('change');
-    expect(wrapper.instance().props.setSearchText).toHaveBeenCalled();
+  it('should call setSearchText onChange', () => {
+    const mockEvent = { target: { value: '' } };
+    wrapper.find('input').simulate('change', mockEvent);
+    expect(setSearchTextMock).toHaveBeenCalled();
   });
 
 
