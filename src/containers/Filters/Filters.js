@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
+import ReactTooltip from 'react-tooltip';
 
 export const Filters = ({ events, getEvents }) => {
   const [eventType, updateType] = useState('');
@@ -81,7 +82,9 @@ export const Filters = ({ events, getEvents }) => {
           <option key='State'value=''>All States</option>
           {setFilters('state')}
         </select>
-        <button className='reset-filters' onClick={() => clearFilters()}></button>
+        <button data-tip
+          data-for='reset' className='reset-filters' onClick={() => clearFilters()}></button>
+        <ReactTooltip id='reset' type='dark' effect='solid' place='top'>Reset Filters</ReactTooltip>
       </div>
     );
   } else {

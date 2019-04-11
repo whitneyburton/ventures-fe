@@ -167,7 +167,21 @@ exports[`Filters should match the snapshot 1`] = `
   </select>
   <button
     className="reset-filters"
+    data-for="reset"
+    data-tip={true}
     onClick={[Function]}
   />
+  <ReactTooltip
+    clickable={false}
+    effect="solid"
+    id="reset"
+    insecure={true}
+    place="top"
+    resizeHide={true}
+    type="dark"
+    wrapper="div"
+  >
+    Reset Filters
+  </ReactTooltip>
 </div>
 `;
