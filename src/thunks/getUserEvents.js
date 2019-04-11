@@ -1,7 +1,7 @@
 import { setLoading, setError, setUserEvents } from '../actions';
 import { fetchData } from '../utils/api';
 
-export const getUserEvents = (userId = '') => { 
+export const getUserEvents = (userId) => { 
   return async (dispatch) => {
     try {
       dispatch(setLoading(true));

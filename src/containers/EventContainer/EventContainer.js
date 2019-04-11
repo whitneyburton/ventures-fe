@@ -3,6 +3,26 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import EventCard from '../../components/EventCard/EventCard';
 
+export const filterEvents = (events, searchText) => {
+  return events.filter(event => {
+    const { name, city, state } = event.attributes;
+    const text = name + ' ' + city + ' ' + state;
+    return text.toUpperCase().includes(searchText.toUpperCase());
+  });
+}
+
+export const filterUserEvents = (userEvents, status) => {
+  return userEvents.filter(event => event.attributes.status === status);
+};
+
+export const filterEventsByDate = (userEvents, future) => {
+  const filteredEvents = filterUserEvents(userEvents, 'attending');
+  return filteredEvents.filter(event => {
+    const eventDate = new Date(event.attributes.end_date);
+    return future ? eventDate >= Date.now() : eventDate < Date.now();
+  });
+}
+
 export const EventContainer = ({
   pathname,
   events,
@@ -12,37 +32,15 @@ export const EventContainer = ({
   const styles = pathname.includes('profile')
     ? 'EventContainer profile'
     : 'EventContainer home';
-
-  const filterEvents = () => {
-    return events.filter(event => {
-      const { name, city, state } = event.attributes;
-      const text = name + ' ' + city + ' ' + state;
-      return text.toUpperCase().includes(searchText.toUpperCase());
-    });
-  };
-
-  const filterUserEvents = status => {
-    return userEvents.filter(event => event.attributes.status === status);
-  };
-
-  const filterEventsByDate = future => {
-    const filteredEvents = filterUserEvents('attending');
-    return filteredEvents.filter(event => {
-      const eventDate = new Date(event.attributes.end_date);
-      return future ? eventDate >= Date.now() : eventDate < Date.now();
-    });
-  };
-
+  
   let shownEvents;
 
   if (pathname.includes('upcoming') || pathname.includes('past')) {
-    shownEvents = pathname.includes('upcoming')
-      ? filterEventsByDate(true)
-      : filterEventsByDate(false);
+    shownEvents = pathname.includes('upcoming') ? filterEventsByDate(userEvents, true) : filterEventsByDate(userEvents, false);
   } else if (pathname.includes('wishlist')) {
-    shownEvents = filterUserEvents('wishlist');
+    shownEvents = filterUserEvents(userEvents, 'wishlist');
   } else {
-    shownEvents = searchText.length ? filterEvents() : events;
+    shownEvents = searchText.length ? filterEvents(events, searchText) : events;
   }
 
   return (
