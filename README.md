@@ -1,6 +1,9 @@
 # Ventures
 Ventures is an application to allow users to browse outdoor festivals and events. You can browse through a variety of climbing, mountain biking, hiking, running, and white water rafting events all throughout the US. Each card gives more details including the start/end dates, a link to the events website, an accompanying photo and YouTube video, as well as buttons for the you to add that event to your 'wishlist' or 'attending' lists. Your profile page allows you to edit your user name and personal bio as well as view events filtered by upcoming events, wishlisted events, and past events you've attended. Ventures is here to help you find the right events for you! 
 
+### Preview 
+![2019-04-11 11 19 49](https://user-images.githubusercontent.com/33883645/55977359-dd808200-5c4b-11e9-8fa4-41ec9e1e88c0.gif)
+
 ### Set-Up:   
 #### Front-end  
 Clone this repo by running: `git clone https://github.com/whitneyburton/ventures-fe.git`
