@@ -3,15 +3,23 @@
   height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px;
   
   .text-container {
     width: 400px;
     height: 250px;
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 10px;
+    text-shadow: 2px 2px 8px #000;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
   
   h3,

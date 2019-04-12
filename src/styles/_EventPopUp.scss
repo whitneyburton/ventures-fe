@@ -14,7 +14,7 @@
   top: 0;
   width: 100%;
   z-index: 9;
-  border: 1px solid black;
+  border-radius: 5px;
   width: 900px;
   height: 405px;
   margin: 20px auto;
@@ -25,6 +25,7 @@
   margin-top: -30vh;
   left: 50%;
   top: 50%;
+  box-shadow: 5px 5px 10px #3e3d3dbd;
 
   .display-panel {
     width: 500px;
@@ -34,9 +35,10 @@
 
   .image-container {
     width: 500px;
-    height: 403px;
+    height: 405px;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px 0px 0px 5px;
   }
 
   .text-container {
@@ -45,7 +47,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
   h2,
   h4,
   .event-link {
@@ -53,22 +55,22 @@
     text-align: left;
     font-family: $main-font;
   }
-  
+
   .event-link {
     display: block;
     color: black;
     text-decoration: underline;
-  
+
     &:hover {
       color: blue;
     }
   }
-  
+
   h2 {
     font-size: 30px;
     text-transform: uppercase;
   }
-  
+
   p {
     margin: 10px 20px;
     font-family: $main-font;
@@ -76,26 +78,26 @@
     height: 90px;
     overflow: scroll;
   }
-  
+
   img {
     width: 100%;
     min-height: 300px;
     overflow: hidden;
   }
-  
+
   .event-type {
     text-transform: capitalize;
   }
-  
+
   .light-text {
     font-weight: 400;
   }
-  
+
   .button-div {
     width: 90px;
     margin: 0 0 5px auto;
   }
-  
+
   .wishlist-button,
   .attending-button,
   .close-pop-up,
@@ -104,29 +106,29 @@
     width: 33px;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease-out;
   }
-  
+
   .wishlist-button {
     background: url('../images/add_to_wishlist.svg');
     background-size: cover;
-  
+
     &:hover {
       background: url('../images/remove_from_wishlist.svg');
       background-size: cover;
     }
   }
 
-  
   .attending-button {
     background: url('../images/add_to_attending.svg');
     background-size: cover;
-    
+
     &:hover {
       background: url('../images/remove_from_attending.svg');
       background-size: cover;
     }
   }
-  
+
   .attending-active {
     background: url('../images/remove_from_attending.svg');
     background-size: cover;
@@ -143,7 +145,7 @@
     background: url('../images/close.svg');
     background-size: cover;
     z-index: 12;
-  
+
     &:hover {
       background: url('../images/close_hover.svg');
       background-size: cover;
@@ -158,11 +160,13 @@
   .forward {
     top: -210px;
     right: -230px;
-    background: url('../images/arrow_forward.svg');
+    background: url('../images/arrow-circle.svg');
+    transform: rotate(270deg);
     background-size: cover;
-  
+
     &:hover {
-      background: url('../images/arrow_forward_hover.svg');
+      background: url('../images/arrow-circle-hover.svg');
+      transform: rotate(270deg);
       background-size: cover;
     }
   }
@@ -170,19 +174,19 @@
   .back {
     top: -210px;
     right: 225px;
-    background: url('../images/arrow_back.svg');
+    background: url('../images/arrow-circle.svg');
+    transform: rotate(90deg);
     background-size: cover;
-  
+
     &:hover {
-      background: url('../images/arrow_back_hover.svg');
+      background: url('../images/arrow-circle-hover.svg');
+      transform: rotate(90deg);
       background-size: cover;
     }
   }
-
-  
 }
 
-@media screen and (max-width: 920px) {  
+@media screen and (max-width: 920px) {
   .EventPopUp {
     width: 400px;
     height: 600px;
@@ -190,7 +194,7 @@
     margin-left: -200px;
     flex-direction: column;
 
-    h4, 
+    h4,
     p,
     a {
       font-size: 14px;
@@ -210,7 +214,7 @@
       width: 398px;
       height: 250px;
     }
-  
+
     .text-container {
       width: 400px;
     }
