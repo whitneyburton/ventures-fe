@@ -152,8 +152,4 @@ exports[`Profile should match the snapshot for editing profile 1`] = `
 </div>
 `;
 
-exports[`Profile should match the snapshot for loading 1`] = `
-<h1>
-  Loading...
-</h1>
-`;
+exports[`Profile should match the snapshot for loading 1`] = `<div />`;

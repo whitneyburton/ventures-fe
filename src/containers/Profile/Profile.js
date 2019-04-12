@@ -85,7 +85,7 @@ export const Profile = ({ location, user, updateUser }) => {
       </div>
     );
   } else {
-    return <h1>Loading...</h1>;
+    return <div></div>;
   }
 };
 

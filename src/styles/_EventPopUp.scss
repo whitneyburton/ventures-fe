@@ -36,6 +36,7 @@
   .image-container {
     width: 500px;
     height: 405px;
+    border: none;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px 0px 0px 5px;
@@ -145,10 +146,12 @@
     background: url('../images/close.svg');
     background-size: cover;
     z-index: 12;
+    transition: all 200ms ease-in-out;
 
     &:hover {
       background: url('../images/close_hover.svg');
       background-size: cover;
+      transform: rotate(-90deg);
     }
   }
 
