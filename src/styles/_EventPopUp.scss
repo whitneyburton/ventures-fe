@@ -161,7 +161,7 @@
   }
 
   .forward {
-    top: -210px;
+    top: -220px;
     right: -230px;
     background: url('../images/arrow-circle.svg');
     transform: rotate(270deg);
@@ -175,7 +175,7 @@
   }
 
   .back {
-    top: -210px;
+    top: -220px;
     right: 225px;
     background: url('../images/arrow-circle.svg');
     transform: rotate(90deg);
@@ -192,7 +192,7 @@
 @media screen and (max-width: 920px) {
   .EventPopUp {
     width: 400px;
-    height: 600px;
+    height: 645px;
     margin-top: -40vh;
     margin-left: -200px;
     flex-direction: column;
@@ -214,8 +214,9 @@
     }
 
     .image-container {
-      width: 398px;
+      width: 400px;
       height: 250px;
+      border-radius: 5px 5px 0px 0px;
     }
 
     .text-container {
@@ -223,13 +224,78 @@
     }
 
     .forward {
-      top: -140px;
+      top: -145px;
       right: -180px;
     }
 
     .back {
-      top: -140px;
+      top: -145px;
       right: 175px;
     }
   }
+}
+
+@media screen and (max-width: 550px) { 
+  .EventPopUp {
+    margin-top: -360px;
+  }
+
+}
+
+@media screen and (max-width: 410px) { 
+  .EventPopUp {
+    width: 310px;
+    height: 500px;
+    margin-top: -280px;
+    margin-left: -155px;
+
+    h2 {
+      font-size: 20px;
+      margin: 0 8px 5px 8px;
+    }
+
+    .event-link,
+    h4 {
+      margin: 3px 8px;
+    }
+
+    p {
+      margin: 3px 8px;
+      height: 60px;
+    }
+
+    .display-panel {
+      width: 310px;
+      height: 200px;
+    }
+
+    .image-container {
+      width: 310px;
+      height: 200px;
+    }
+
+    .text-container {
+      width: 310px;
+    }
+
+    .forward {
+      top: -120px;
+      right: -135px;
+    }
+
+    .back {
+      top: -120px;
+      right: 140px;
+    }
+
+    .close-pop-up {
+      margin: 5px 5px 0 auto;
+    }
+
+    .button-div {
+      width: 80px;
+      padding-right: 0;
+    }
+  }
+
 }
