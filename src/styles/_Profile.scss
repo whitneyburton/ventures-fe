@@ -126,3 +126,33 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .Profile {
+    .user-profile {
+      height: 22vh;
+
+      .user-photo {
+        height: 100px;
+        width: 100px;
+      }
+
+      .user-bio-section {
+        padding-left: 10px;
+
+        .user-bio {
+          height: 90px;
+          font-size: 14px;
+        }
+
+        .edit-profile-button {
+          font-size: 14px;
+        }
+      }
+
+      .user-name {
+        font-size: 16px;
+      }
+    }
+  }
+}
