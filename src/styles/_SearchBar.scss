@@ -9,16 +9,16 @@
   .searchbar-container {
     display: flex;
     padding: 7px 20px;
+    background-color: #eee;
     border-radius: 5px;
     height: 45px;
-    background-color: rgb(248, 248, 248);
     width: 95%;
     margin: auto;
-
+    
     .searchbar-icon {
       height: 30px;
     }
-
+    
     .searchbar-input {
       width: 90%;
       margin: auto;
@@ -36,5 +36,25 @@
 @media screen and (max-width: 1000px) {  
   .SearchBar {
     width: 100%
+  }
+}
+
+@media screen and (max-width: 410px) {  
+  .SearchBar {
+    height: 8vh;
+
+    .searchbar-title {
+      display: none;
+    }
+
+    .searchbar-container {
+      margin-top: 10px;
+      height: 35px;
+
+      .searchbar-icon {
+        height: 20px;
+      }
+    }
+
   }
 }

@@ -11,6 +11,7 @@
     height: 45px;
     width: 30%;
     font-size: 14px;
+    background-color: #eee;
   }
 
   option {
@@ -39,5 +40,30 @@
 
   select {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {  
+  .Filters {
+    select {
+      width: 110px;
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {  
+  .Filters {
+    height: 14vh;
+
+    .filters-title {
+      font-size: 14px;
+    }
+
+    select {
+      height: 35px;
+      width: 85px;
+      font-size: 12px;
+    }
   }
 }
