@@ -48,3 +48,19 @@
 a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 410px) { 
+  .EventCard {
+    width: 310px;
+    height: 200px;
+
+    .card-name {
+      font-size: 20px;
+    }
+
+    .text-container {
+      width: 310px;
+      height: 200px;
+    }
+  }
+}

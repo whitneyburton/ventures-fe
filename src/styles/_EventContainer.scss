@@ -22,5 +22,22 @@
   .home {
     height: 63vh;
   }
-  
+}
+
+@media screen and (max-width: 600px) {  
+  .EventContainer {
+    .home {
+      padding-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {  
+  .EventContainer {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 310px));
+  }
+
+  .home {
+    height: 65vh;
+  }
 }
