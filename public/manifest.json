@@ -1,6 +1,13 @@
 {
   "name": "Ventures",
   "short_name": "Ventures",
+  "theme_color": "#819fb6",
+  "background_color": "#baeffe",
+  "description": "An app to find your next outdoor adventure festival",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "any",
   "icons": [
     {
       "src": "./src/images/pwa-icons/icon-72x72.png",
@@ -42,10 +49,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#819fb6",
-  "background_color": "#baeffe",
-  "display": "browser",
-  "scope": "/",
-  "start_url": "https://ventures-turing.herokuapp.com/"
+  ]
 }
