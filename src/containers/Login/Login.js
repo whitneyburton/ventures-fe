@@ -18,6 +18,8 @@ export const Login = ({ getUser, getUserEvents, history }) => {
     <Fragment>
       <div className='overlay'></div>
       <form autoComplete='off' onSubmit={handleSubmit} className='Login'>
+        <button onClick={() => history.goBack()} className='close-pop-up'></button>
+        <h3>User Login</h3>
         <label>Email
               <input onChange={(e) => updateEmail(e.target.value)} required type='email' placeholder='Enter your email' id='email' value={email} />
         </label>
