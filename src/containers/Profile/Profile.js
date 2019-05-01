@@ -51,7 +51,7 @@ export const Profile = ({ location, user, updateUser, setUser, setUserEvents, hi
               </button>
               <button
                 onClick={() => logoutUser()}
-                className='edit-profile-button'
+                className='logout-button'
               >
                 Logout
               </button>

@@ -23,7 +23,7 @@
   .bio-header {
     display: grid;
     align-items: center;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 1fr 100px 110px;
     justify-content: space-between;
   }
 
@@ -41,7 +41,8 @@
     text-align: center;
   }
 
-  .edit-profile-button {
+  .edit-profile-button,
+  .logout-button {
     border-radius: 5px;
     border: none;
     width: 100px;
@@ -133,7 +134,8 @@
       margin: 8px;
     }
 
-    .edit-profile-button {
+    .edit-profile-button,
+    .logout-button {
       margin-left: auto;
     }
   }
