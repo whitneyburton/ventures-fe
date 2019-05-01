@@ -21,12 +21,14 @@
   }
 
   .bio-header {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 3fr 1fr 1fr;
     justify-content: space-between;
   }
 
   .user-name {
+    text-align: left;
     letter-spacing: 3px;
   }
 
@@ -48,6 +50,11 @@
     cursor: pointer;
     color: #f8f8f8;
     background-color: #5c5c5c;
+    margin: 0 0 0 auto;
+
+    &:hover {
+      background-color: #00cbcb;
+    }
   }
 
   .user-about-me {
