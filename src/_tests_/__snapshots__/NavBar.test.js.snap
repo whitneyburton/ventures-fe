@@ -26,6 +26,7 @@ exports[`NavBar should match the snapshot 1`] = `
     >
       Welcome 
       Wonder Woman
+      !
     </p>
   </div>
   <NavLink

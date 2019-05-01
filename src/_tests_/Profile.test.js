@@ -48,7 +48,7 @@ describe('Profile', () => {
     wrapper.find('.edit-profile-button').simulate('click');
     wrapper.find('.edit-name-input').simulate('change', mockEvent);
     wrapper.find('.edit-profile-button').simulate('click');
-    expect(wrapper.find('.user-name').text()).toBe('WHITNEY')
+    expect(wrapper.find('.user-name').text()).toBe('Whitney')
   });
 
   it('should change the bio', () => {

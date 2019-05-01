@@ -21,7 +21,7 @@ exports[`Profile should match the snapshot 1`] = `
         <h1
           className="user-name"
         >
-          JANE DOE
+          Jane Doe
         </h1>
         <button
           className="edit-profile-button"
@@ -103,7 +103,7 @@ exports[`Profile should match the snapshot for editing profile 1`] = `
         <input
           className="edit-name-input"
           onChange={[Function]}
-          value="JANE DOE"
+          value="Jane Doe"
         />
         <button
           className="edit-profile-button"
