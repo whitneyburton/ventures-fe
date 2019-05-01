@@ -5,26 +5,23 @@ import EventContainer from '../EventContainer/EventContainer';
 import Profile from '../Profile/Profile';
 import EventPopUp from '../EventPopUp/EventPopUp';
 import NavBar from '../../components/NavBar/NavBar';
+import Login from '../Login/Login';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
-import { getUser } from '../../thunks/getUser';
-import { getUserEvents } from '../../thunks/getUserEvents';
 import PropTypes from 'prop-types';
 
-export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
+export const App = ({ getEvents, location, error, user, history }) => {
   useEffect(() => {
-    getUser('1');
     getEvents();
-    getUserEvents('1');
   }, []);
 
   if (!error) {
     return (
       <div className='App'>
-        <NavBar />
+        <NavBar user={user}/>
         <Switch>
-          <Route path='/profile' component={Profile} />
+          <Route path='/profile' render={() => <Profile history={history} location={location}/>} />
           <Route
             path='/'
             render={() => (
@@ -39,11 +36,13 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
           />
         </Switch>
         <Switch>
+          <Route path='/login' render={() => <Login history={history} />} />
           <Route path='/event/:id' component={EventPopUp} />
           <Route path='/profile/upcoming/event/:id' component={EventPopUp} />
           <Route path='/profile/wishlist/event/:id' component={EventPopUp} />
           <Route path='/profile/past/event/:id' component={EventPopUp} />
         </Switch>
+        
       </div>
     );
   } else {
@@ -64,13 +63,12 @@ export const App = ({ getEvents, getUser, getUserEvents, location, error }) => {
 };
 
 export const mapStateToProps = state => ({
-  error: state.error
+  error: state.error,
+  user: state.user
 });
 
 export const mapDispatchToProps = dispatch => ({
   getEvents: () => dispatch(getEvents()),
-  getUserEvents: id => dispatch(getUserEvents(id)),
-  getUser: id => dispatch(getUser(id))
 });
 
 export default withRouter(
