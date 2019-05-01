@@ -35,8 +35,10 @@ export const EventContainer = ({
   
   let shownEvents;
 
-  if (pathname.includes('upcoming') || pathname.includes('past')) {
-    shownEvents = pathname.includes('upcoming') ? filterEventsByDate(userEvents, true) : filterEventsByDate(userEvents, false);
+  if (pathname.includes('upcoming')) {
+    shownEvents = filterEventsByDate(userEvents, true);
+  } else if (pathname.includes('past')) {
+    shownEvents = filterEventsByDate(userEvents, false);
   } else if (pathname.includes('wishlist')) {
     shownEvents = filterUserEvents(userEvents, 'wishlist');
   } else {
