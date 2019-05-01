@@ -1,11 +1,7 @@
 import React from 'react';
 import { App, mapStateToProps, mapDispatchToProps } from '../containers/App/App';
 import { shallow } from 'enzyme';
-import { getUser } from '../thunks/getUser';
 import { getEvents } from '../thunks/getEvents';
-import { getUserEvents } from '../thunks/getUserEvents';
-jest.mock('../thunks/getUser');
-jest.mock('../thunks/getUserEvents');
 jest.mock('../thunks/getEvents');
 
 describe('App', () => {
@@ -20,8 +16,6 @@ describe('App', () => {
     wrapper = shallow(
       <App
         getEvents={getEvents}
-        getUserEvents={getUserEvents}
-        getUser={getUser}
         error={mockError}
         location={mockLocation}
       />
@@ -64,22 +58,6 @@ describe('App', () => {
       const actionToDispatch = getEvents();
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.getEvents();
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
-
-    it('should call dispatch when getUser is called', () => {
-      const mockDispatch = jest.fn();
-      const actionToDispatch = getUser();
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.getUser();
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
-
-    it('should call dispatch when getUserEvents', () => {
-      const mockDispatch = jest.fn();
-      const actionToDispatch = getUserEvents();
-      const mappedProps = mapDispatchToProps(mockDispatch);
-      mappedProps.getUserEvents();
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });

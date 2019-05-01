@@ -29,6 +29,12 @@ exports[`Profile should match the snapshot 1`] = `
         >
           Edit Profile
         </button>
+        <button
+          className="logout-button"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
       </div>
       <p
         className="user-about-me"
@@ -104,6 +110,12 @@ exports[`Profile should match the snapshot for editing profile 1`] = `
           onClick={[Function]}
         >
           Save
+        </button>
+        <button
+          className="logout-button"
+          onClick={[Function]}
+        >
+          Logout
         </button>
       </div>
       <p

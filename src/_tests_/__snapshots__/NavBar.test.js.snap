@@ -13,11 +13,21 @@ exports[`NavBar should match the snapshot 1`] = `
       Ventures
     </h2>
   </NavLink>
-  <p
-    className="ventures-slogan"
+  <div
+    className="subtitle"
   >
-    A place to find and track outdoor events that speak to you.
-  </p>
+    <p
+      className="ventures-slogan"
+    >
+      A place to find and track outdoor events that speak to you.
+    </p>
+    <p
+      className="user-name"
+    >
+      Welcome 
+      Wonder Woman
+    </p>
+  </div>
   <NavLink
     activeClassName="home-active"
     className="home-button"
