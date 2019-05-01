@@ -14,14 +14,25 @@
     letter-spacing: 2px;
     color: white;
   }
+
+  .subtitle {
+    align-self: center;
+    width: 40%;
+    margin-right: 35%;
+    text-align: left;
+  }
   
   .ventures-slogan {
-    width: 21%;
-    text-align: left;
     font-size: 14px;
-    margin-right: 45%;
     color: white;
     letter-spacing: 0.5px;
+    margin: 10px 0 0 0;
+  }
+
+  .user-name {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
   }
 
   .home-button {
