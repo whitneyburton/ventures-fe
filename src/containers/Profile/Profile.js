@@ -35,11 +35,11 @@ export const Profile = ({ location, user, updateUser, setUser, setUserEvents, hi
           <div className='user-bio-section'>
             <div className='bio-header'>
               {!contentEditable ? (
-                <h1 className='user-name'>{name.toUpperCase()}</h1>
+                <h1 className='user-name'>{name}</h1>
               ) : (
                 <input
                   className='edit-name-input'
-                  value={name.toUpperCase()}
+                  value={name}
                   onChange={e => editName(e.target.value)}
                 />
               )}

@@ -28,11 +28,13 @@
   }
 
   .user-name {
+    text-transform: uppercase;
     text-align: left;
     letter-spacing: 3px;
   }
 
   .edit-name-input {
+    text-transform: uppercase;
     width: 80%;
     font-size: 2em;
     font-weight: 600;

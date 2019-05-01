@@ -7,7 +7,7 @@ export const NavBar = ({ user }) => {
       <NavLink to='/'><h2 className='ventures-title'>Ventures</h2></NavLink>
       <div className='subtitle'>
         <p className='ventures-slogan'>A place to find and track outdoor events that speak to you.</p>
-        {user.name && <p className='user-name'>Welcome {user.name}</p>}
+        {user.name && <p className='user-name'>Welcome {user.name}!</p>}
       </div>
       <NavLink exact to='/' className='home-button' activeClassName='home-active' />
       <NavLink 
