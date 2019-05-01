@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import EventContainer from '../EventContainer/EventContainer';
 import { updateUser } from '../../thunks/updateUser';
+import { setUser, setUserEvents } from '../../actions';
 
-export const Profile = ({ location, user, updateUser }) => {
+export const Profile = ({ location, user, updateUser, setUser, setUserEvents, history }) => {
   if (user.name) {
     const [contentEditable, toggleEditable] = useState(false);
     const [name, editName] = useState(user.name);
@@ -16,6 +17,12 @@ export const Profile = ({ location, user, updateUser }) => {
       toggleEditable(!contentEditable);
       contentEditable && updateUser({ name, bio });
     };
+
+    const logoutUser = () => {
+      setUser({});
+      setUserEvents([]);
+      history.replace('/');
+    }
 
     return (
       <div className='Profile'>
@@ -41,6 +48,12 @@ export const Profile = ({ location, user, updateUser }) => {
                 className='edit-profile-button'
               >
                 {buttonText}
+              </button>
+              <button
+                onClick={() => logoutUser()}
+                className='edit-profile-button'
+              >
+                Logout
               </button>
             </div>
             <p className='user-about-me'>ABOUT ME</p>
@@ -94,7 +107,9 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  updateUser: user => dispatch(updateUser(user))
+  updateUser: user => dispatch(updateUser(user)),
+  setUser: user => dispatch(setUser(user)),
+  setUserEvents: events => dispatch(setUserEvents(events))
 });
 
 export default connect(
