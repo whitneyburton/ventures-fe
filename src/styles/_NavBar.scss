@@ -5,14 +5,14 @@
   width: 100%;
   height: 10vh;
   padding: 0px 20px;
-  background-color: #ddd;
+  background-color: #00000070;
   z-index: 12;
 
   .ventures-title {
     font-size: 27px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: black;
+    color: white;
   }
   
   .ventures-slogan {
@@ -20,6 +20,8 @@
     text-align: left;
     font-size: 14px;
     margin-right: 45%;
+    color: white;
+    letter-spacing: 0.5px;
   }
 
   .home-button {

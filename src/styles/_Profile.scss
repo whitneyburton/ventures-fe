@@ -74,7 +74,6 @@
     display: flex;
     width: 100%;
     margin: auto;
-    background-color: #eaeaed;
     min-height: 40px;
     height: 5vh;
   }
@@ -83,7 +82,10 @@
   .wishlist-button,
   .past-button {
     border: 1px solid #cecfd5;
+    border-top: 2px solid #cecfd5;
+    border-bottom: 2px solid #cecfd5;
     text-decoration: none;
+    background-color: #eaeaed;
     width: 33.33%;
     cursor: pointer;
     color: #5c5c5c;
@@ -92,15 +94,15 @@
     font-weight: 500;
     
     &:hover {
-      transition: all 0.3s ease-in;
-      color: blue;
+      color: #00cbcb;
     }
   }
   
   .active {
-    background-color: #fff;
+    background-color: transparent;
     color: #000;
     border: 1px solid #cecfd5;
+    border-top: 2px solid #cecfd5;
     border-bottom: none;
 
     &:hover {
