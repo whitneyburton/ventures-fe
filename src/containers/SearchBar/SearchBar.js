@@ -13,7 +13,7 @@ export const SearchBar = ({ setSearchText, searchText}) => {
       </div>
     </div>
   );
-}
+} 
 
 export const mapStateToProps = (state) => ({
   searchText: state.searchText,
