@@ -80,7 +80,5 @@ export default withRouter(
 
 App.propTypes = {
   error: PropTypes.string,
-  getEvents: PropTypes.func,
-  getUser: PropTypes.func,
-  getUserEvents: PropTypes.func
+  getEvents: PropTypes.func
 };
