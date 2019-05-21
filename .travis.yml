@@ -9,5 +9,5 @@ deploy:
   provider: heroku
   api_key:
     secure: lHYgCDQ/s84vPXWU/Wvqf0LjbUDksADlPPqib3+Te7yVopmY38pxChaQnFE26cwhl5jQ1PRuAa19V2S/bOJ7Eaytp5PW2t78XKGU5Eq40YZBrcvG8kbTsyfYr/n3PNQ5wusHu0JNCaQWr/nKMzE4aZ673Jwrr5bV/svLWgAA6MmFX+xr7yygLJn/tZjOlAzDilhX0ExfzxRfOdg5rAqxwRoVm2WJ/ZV0JfTuq+fWEQOZ/e//xwCoN6MnOFbfIon+UxvLYRN0Nx6kokrmLS0KyowLXtEd+Mh3s8FuiwUjej9siOUj7J+/gvkg4H5YtxjpWM8WMH6y6rCoV10mrsC5SpnoWUZqwrIaIkhc2H14xIwShC74hdXn+Ig5Q4akLB5714Z6s5fi7EGqZ/NLLUN/z9Q1/lQChyzFgnuDCuV0uozLulZQ8N3jR6NjcmMbb1MlCGtakxQp2ExKwfAxpbXzdWiQR6PY1466tz1Lm73eZFryWENUfKLoWJoxCLHU7+rWsTTb7FFQywf7oIwG4Unz6S7lwS1l6zB2reWzp1iDJpBPClZZj1IEKke4Y3v/Gh+fl4tJDI7qjnlb/FeD3zuCJuSj/hb5LoxsM7f6r7ZPk6iMIVkeQu3PXKEK1I/6fUl1/YKM3p7Q5QnrkPEfyujmY2HmbRFFgMHPT0hO3PdRMHQ=
-  app: ventures-turing
+  app: ventures-fe
   skip_cleanup: true
