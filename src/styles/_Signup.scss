@@ -1,0 +1,94 @@
+.Signup {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  border-radius: 5px;
+  width: 400px;
+  height: 700px;
+  margin: 20px auto;
+  position: fixed;
+  background-color: #fff;
+  margin-left: -150px;
+  margin-top: -30vh;
+  left: 50%;
+  top: 45%;
+  box-shadow: 5px 5px 10px #3e3d3dbd;
+
+  h3 {
+    margin-top: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  label {
+    margin: 0 20px;
+    text-align: left;
+    display: block;
+  }
+
+  .bio-input {
+    height: 70px;
+  }
+
+  input {
+    padding: 5px;
+    height: 30px;
+    width: 100%;
+    display: block;
+    margin: 10px 0 20px 0;
+  }
+
+  button {
+    display: block;
+    margin: 40px auto 20px auto;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    padding: 4px 0px;
+    cursor: pointer;
+    color: #f8f8f8;
+    background-color: #5c5c5c;
+
+    &:hover {
+      background-color: #00cbcb;
+    }
+  }
+
+  .pop-up-link {
+    text-decoration: underline;
+    color: black;
+
+    &:hover {
+      color: #00cbcb;
+    }
+  }
+
+  .close-pop-up {
+    height: 33px;
+    width: 33px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    display: block;
+    margin: 10px 10px 0 auto;
+    background: url('../images/close.svg');
+    background-size: cover;
+    z-index: 12;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      background: url('../images/close_hover.svg');
+      background-size: cover;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .Signup {
+    margin-top: -40vh;
+  }
+}
