@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile';
 import EventPopUp from '../EventPopUp/EventPopUp';
 import NavBar from '../../components/NavBar/NavBar';
 import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEvents } from '../../thunks/getEvents';
@@ -37,6 +38,7 @@ export const App = ({ getEvents, location, error, user, history }) => {
         </Switch>
         <Switch>
           <Route path='/login' render={() => <Login history={history} />} />
+          <Route path='/sign-up' render={() => <Signup history={history} />} />
           <Route path='/event/:id' component={EventPopUp} />
           <Route path='/profile/upcoming/event/:id' component={EventPopUp} />
           <Route path='/profile/wishlist/event/:id' component={EventPopUp} />
